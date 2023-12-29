@@ -21,7 +21,7 @@ export default async function Movie({ params }: { params: { slug: string } }) {
         <h1 className="text-xl pt-5 px-5">Description</h1>
         <p className="text-xs  pl-5">{result.overview}</p>
         <h2 className="text-xl pt-5 pl-5">Casts:</h2>
-        <div className="flex gap-5 m-5">
+        <div className="flex flex-wrap gap-5 m-5">
           {cast.map((c:any) => (<ProfileCard key={c.id} path={c.profile_path} name={c.name}/>))}
         </div>
       </div>
