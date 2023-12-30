@@ -10,6 +10,9 @@ import {
 import { SearchIcon } from "./SearchIcon";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { FaHouse } from "react-icons/fa6";
+import {Button, ButtonGroup} from "@nextui-org/react";
+
 
 export default function Nav() {
   const router = useRouter();
@@ -42,6 +45,11 @@ export default function Nav() {
         /></form>
       </NavbarContent>
       <NavbarContent as="div" className="items-center" justify="end">
+        <Link href={'/'}>
+        <Button size="sm" variant="flat">
+        <FaHouse size={16}/> Home
+        </Button>
+        </Link>
         <Link href={"/profile"}>
           <Avatar
             isBordered

@@ -32,6 +32,7 @@ export default function InfoCard({ result }: any) {
                   : "/notfound.jpg"
               }
               width="100%"
+              
             />
           </div>
 

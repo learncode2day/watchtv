@@ -17,7 +17,11 @@ export default function EpisodeCard({ result }: any) {
           <Image
             alt="Card background"
             className="object-cover rounded-xl"
-            src={`${TMDB_IMAGE_ENDPOINT}${result.still_path}`}
+            src={
+              result.still_path
+                ? `${TMDB_IMAGE_ENDPOINT}${result.still_path}`
+                : "/epNotFound.jpg"
+            }
             width={270}
           />
         </CardBody>
