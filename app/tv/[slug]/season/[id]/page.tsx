@@ -2,9 +2,8 @@ import EpisodeCard from "@/components/EpisodeCard";
 import Pagination from "@/components/Pagination";
 import Nav from "@/components/Nav";
 import { SeasonDetails, findTV } from "@/utils/Fetcher";
-import SideBar from "@/components/Sidebar";
 
-export async function Season({
+export default async function Season({
   params,
 }: {
   params: { slug: string; id: string };
@@ -29,4 +28,3 @@ export async function Season({
   );
 }
 
-export default Season;
