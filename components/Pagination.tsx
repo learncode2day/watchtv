@@ -8,8 +8,8 @@ import Link from "next/link";
 
 export default function Pagination({ totalPages, currentPage, tvId }: any) {
   const router = useRouter();
-  const handleChange = (page: any) => {
-    const newPath = `/tv/${tvId}/season/${page}`;
+  const handleChange = (path: any) => {
+    const newPath = `/tv/${tvId}/season/${path}`;
     router.push(newPath);
   };
 
