@@ -32,7 +32,7 @@ const MediaList = ({ header, expand, results, type }: any) => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1.2,
+          slidesToShow: 1.1,
           slidesToScroll: 1,
           initialSlide: 1,
         },
