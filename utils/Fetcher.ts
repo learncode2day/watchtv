@@ -65,7 +65,7 @@ export async function getTVCasts(id: string){
   return data;
 }
 
-export async function SeasonDetails(id: string,idx: number){
+export async function SeasonDetails(id: string,idx: string){
   const response = await axios.get(`${ENDPOINT}/tv/${id}/season/${idx}?api_key=${API_KEY}`);
   var data = response.data.episodes;
   return data;

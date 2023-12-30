@@ -7,7 +7,7 @@ import SideBar from "@/components/Sidebar";
 export async function Season({
   params,
 }: {
-  params: { slug: string; id: any };
+  params: { slug: string; id: string };
 }) {
   const tv = await findTV(params.slug);
   const seasons = tv.number_of_seasons;
