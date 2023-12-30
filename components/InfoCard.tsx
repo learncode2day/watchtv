@@ -40,9 +40,9 @@ export default function InfoCard({ result }: any) {
             <div className="flex justify-between items-start">
               <div className="flex flex-col gap-0">
                 <h3 className="font-semibold text-foreground/90 text-3xl py-2">
-                  {result.original_title
-                    ? result.original_title
-                    : result.original_name}
+                  {result.title
+                    ? result.title
+                    : result.name}
                 </h3>
                 <div className="flex justify-start gap-1 py-2">
                   <Chip size="sm" variant="bordered" radius="sm">
