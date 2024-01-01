@@ -21,7 +21,7 @@ export default async function Season({
       </div>
       <div className="grid grid-cols-2">
         {episodes.map((e: any) => (
-          <EpisodeCard key={e.id} result={e} />
+          <EpisodeCard key={e.id} result={e} current={params.id} idx={params.slug} />
         ))}
       </div>
     </div>

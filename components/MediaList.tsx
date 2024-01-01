@@ -2,43 +2,16 @@
 import MovieCard from "./MovieCard";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import React from "react";
-import { CustomArrow } from "./CustomArrow";
+import { FaAngleLeft } from "react-icons/fa6";
+import { FaAngleRight } from "react-icons/fa6";
 
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const MediaList = ({ header, expand, results, type }: any) => {
-  var settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 5.1,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    swipeToSlide: true,
-    prevArrow: <CustomArrow className="slick-prev" direction="left" />,
-    nextArrow: <CustomArrow className="slick-next" direction="right" />,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3.1,
-          slidesToScroll: 1,
-          initialSlide: 1,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1.1,
-          slidesToScroll: 1,
-          initialSlide: 1,
-        },
-      },
-    ],
-  };
   return (
     <div className="z-10 mt-10">
       <div className="flex justify-between mx-5">
@@ -51,11 +24,47 @@ const MediaList = ({ header, expand, results, type }: any) => {
       </div>
 
       <div className="h-max">
-        <Slider {...settings} className="mx-2">
+        <Swiper
+          navigation={{
+            nextEl: ".custom-next-button",
+            prevEl: ".custom-prev-button",
+          }}
+          modules={[Navigation]}
+          slidesPerView={1}
+          spaceBetween={10}
+          className="mySwiper"
+          loop={true}
+          breakpoints={{
+            "@0.00": {
+              slidesPerView: 1.5,
+              spaceBetween: 10,
+            },
+            "@0.75": {
+              slidesPerView: 2.5,
+              spaceBetween: 10,
+            },
+            "@1.00": {
+              slidesPerView: 3.5,
+              spaceBetween: 10,
+            },
+            "@1.50": {
+              slidesPerView: 5.5,
+              spaceBetween: 10,
+            },
+          }}
+        >
           {results.map((result: any) => (
-            <MovieCard result={result} key={result.id} type={type}/>
+            <SwiperSlide key={result.id}>
+              <MovieCard result={result}  type={type} />
+            </SwiperSlide>
           ))}
-        </Slider>
+          <div className="swiper-button custom-prev-button left-0">
+            <FaAngleLeft size={20} />
+          </div>
+          <div className="swiper-button custom-next-button right-0">
+            <FaAngleRight size={20} />
+          </div>
+        </Swiper>
       </div>
     </div>
   );

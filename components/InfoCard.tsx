@@ -5,6 +5,7 @@ import { Chip } from "@nextui-org/react";
 import { FaCirclePlay } from "react-icons/fa6";
 import { FaLayerGroup } from "react-icons/fa6";
 import Link from "next/link";
+
 export default function InfoCard({ result }: any) {
   const genre = result.genres;
   const date = result.release_date
@@ -20,7 +21,7 @@ export default function InfoCard({ result }: any) {
     >
       <CardBody>
         <div className="grid grid-cols-6 md:grid-cols-12 gap-6 md:gap-4 items-center justify-center">
-          <div className="relative col-span-6 md:col-span-4">
+          <div className="relative col-span-6 md:col-span-4 mx-auto  w-1/2 sm:w-auto">
             <Image
               alt="Album cover"
               className="object-cover"
@@ -40,9 +41,7 @@ export default function InfoCard({ result }: any) {
             <div className="flex justify-between items-start">
               <div className="flex flex-col gap-0">
                 <h3 className="font-semibold text-foreground/90 text-3xl py-2">
-                  {result.title
-                    ? result.title
-                    : result.name}
+                  {result.title ? result.title : result.name}
                 </h3>
                 <div className="flex justify-start gap-1 py-2">
                   <Chip size="sm" variant="bordered" radius="sm">
@@ -68,13 +67,16 @@ export default function InfoCard({ result }: any) {
                 <div className="mt-5">
                   {result.first_air_date ? (
                     <Link href={`${result.id}/season/1`}>
-                    <Button color="warning" variant="ghost">
-                      <FaLayerGroup size="20" /> Seasons
-                    </Button></Link>
+                      <Button color="default" variant="ghost">
+                        <FaLayerGroup size="20" /> Seasons
+                      </Button>
+                    </Link>
                   ) : (
-                    <Button color="warning" variant="ghost">
-                      <FaCirclePlay size="20" /> Play
-                    </Button>
+                    <Link href={`https://vidsrc.to/embed/movie/${result.id}`}>
+                      <Button color="default" variant="ghost">
+                        <FaCirclePlay size="20" /> Play
+                      </Button>
+                    </Link>
                   )}
                 </div>
               </div>
