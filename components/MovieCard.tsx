@@ -24,9 +24,11 @@ const MovieCard = ({ result,type }: Prop) => {
     : result.first_air_date;
   return (
     <MotionDiv
-      className="flex justify-start m-10 cursor-pointer"
+      className="flex justify-start m-6 cursor-pointer"
       whileHover={{
         scale: 1.1,
+        border:"5px solid white",
+        borderRadius:"20px"
       }}
       transition={{ duration: 0.3, type: "spring", stiffness: 200 }}
     >

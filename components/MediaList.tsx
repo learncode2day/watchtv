@@ -55,14 +55,18 @@ const MediaList = ({ header, expand, results, type }: any) => {
         >
           {results.map((result: any) => (
             <SwiperSlide key={result.id}>
-              <MovieCard result={result}  type={type} />
+              <MovieCard result={result} type={type} />
             </SwiperSlide>
           ))}
           <div className="swiper-button custom-prev-button left-0">
-            <FaAngleLeft size={20} />
+            <Button isIconOnly variant="faded">
+              <FaAngleLeft size={20} />
+            </Button>
           </div>
           <div className="swiper-button custom-next-button right-0">
-            <FaAngleRight size={20} />
+            <Button isIconOnly variant="faded">
+              <FaAngleRight size={20} />
+            </Button>
           </div>
         </Swiper>
       </div>
