@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import SideBar from "@/components/Sidebar";
 import MediaList from "@/components/MediaList";
 import { TrendingMovie } from "@/utils/Fetcher";
+import ExpandedList from "@/components/ExpandedList";
 
 export default async function Home() {
   const trendingPlaying = await TrendingMovie();
@@ -9,7 +10,8 @@ export default async function Home() {
     <main className="p-5 md:ml-20">
       <SideBar />
       <Nav />
-      <MediaList header="Trending Movies" results={trendingPlaying} />
+      <ExpandedList heading="Trending Movies" results={trendingPlaying} type={"movie"} />
+
     </main>
   );
 }

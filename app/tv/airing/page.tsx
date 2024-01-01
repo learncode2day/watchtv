@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import SideBar from "@/components/Sidebar";
 import MediaList from "@/components/MediaList";
 import { AiringTvSeries } from "@/utils/Fetcher";
+import ExpandedList from "@/components/ExpandedList";
 
 export default async function Home() {
   const airingTv = await AiringTvSeries();
@@ -9,7 +10,7 @@ export default async function Home() {
     <main className="p-5 md:ml-20">
       <SideBar />
       <Nav />
-      <MediaList header="Airing Tv Shows" results={airingTv} />
+      <ExpandedList heading="Airing Tv Shows" results={airingTv} />
     </main>
   );
 }

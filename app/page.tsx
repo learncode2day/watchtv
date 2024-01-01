@@ -10,14 +10,10 @@ import {
 } from "@/utils/Fetcher";
 
 export default async function Home() {
-  let nowPlaying = await NowPlayingMovie();
-  nowPlaying = nowPlaying.slice(0,8);
-  let trendingMovie = await TrendingMovie();
-  trendingMovie = trendingMovie.slice(0,8);
-  let airingTv = await AiringTvSeries();
-  airingTv = airingTv.slice(0,8)
-  let trendingTv = await TrendingTvSeries();
-  trendingTv = trendingTv.slice(0,8)
+  const nowPlaying = await NowPlayingMovie(1);
+  const trendingMovie = await TrendingMovie();
+  const airingTv = await AiringTvSeries();
+  const trendingTv = await TrendingTvSeries();
 
   return (
     <main className="p-5 md:ml-20">
