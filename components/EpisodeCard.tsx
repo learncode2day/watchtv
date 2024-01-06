@@ -6,8 +6,8 @@ const TMDB_IMAGE_ENDPOINT = "https://image.tmdb.org/t/p/original";
 export default function EpisodeCard({ result,current,idx }: any) {
   return (
     <div>
-      <Link href={`https://vidsrc.to/embed/tv/${idx}/${current}/${result.episode_number}`}>
-      <Card className="py-4 m-6">
+      <Link href={`/tv/${idx}/season/${current}/stream/${result.episode_number}`}>
+      <Card className="py-4 m-2 sm:m-6">
         <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
           <p className="text-tiny uppercase font-bold">
             Episode {result.episode_number}
