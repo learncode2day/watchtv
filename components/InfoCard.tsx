@@ -72,7 +72,7 @@ export default function InfoCard({ result }: any) {
                       </Button>
                     </Link>
                   ) : (
-                    <Link href={`https://vidsrc.to/embed/movie/${result.id}`}>
+                    <Link href={`/movie/${result.id}/stream`}>
                       <Button color="default" variant="ghost">
                         <FaCirclePlay size="20" /> Play
                       </Button>

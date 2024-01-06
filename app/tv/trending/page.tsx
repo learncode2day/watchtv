@@ -10,7 +10,7 @@ export default async function Home() {
     <main className="p-5 md:ml-20">
       <SideBar />
       <Nav />
-      <ExpandedList heading="Trending Tv Shows" results={trendingTv} />
+      <ExpandedList heading="Trending Tv Shows" results={trendingTv} type={"tv"} />
     </main>
   );
 }

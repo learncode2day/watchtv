@@ -5,12 +5,13 @@ import { getSearchResults } from "@/utils/Fetcher";
 
 export default async function SearchResult({ params }: { params: { slug: string } }) {
     const data = await getSearchResults(params.slug);
-    
+    let searchValue = params.slug;
+    searchValue = searchValue.replaceAll("%20"," ")
   return (
     <main className="p-5 md:ml-20">
       <SideBar />
       <Nav />
-      <MediaList header={`Search Results For ${params.slug}`}  results={data} />
+      <MediaList header={`Search Results For ${searchValue}`}  results={data} />
     </main>
   );
 }
