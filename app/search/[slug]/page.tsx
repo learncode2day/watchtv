@@ -12,7 +12,7 @@ export default async function SearchResult({ params }: { params: { slug: string 
     <main className="p-5 md:ml-20">
       <SideBar />
       <Nav />
-      <ExpandedList header={`Search Results For ${searchValue}`}  results={data} />
+      <ExpandedList heading={`Search Results For ${searchValue}`}  results={data} />
     </main>
   );
 }

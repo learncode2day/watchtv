@@ -30,9 +30,6 @@ export default function StreamMovies({ params }: { params: { slug: string, id:st
           ></iframe>
           <h1 className="mt-2 p-2 font-medium text-teal-300">
             Choose a Provider!
-            {params.slug} and
-            {params.id} and
-            {params.eps}
           </h1>
           <div className="flex gap-2 ">
             <Button
