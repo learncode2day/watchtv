@@ -34,6 +34,7 @@ const MediaList = ({ header, expand, results, type }: any) => {
           spaceBetween={10}
           className="mySwiper"
           loop={true}
+          speed={1000}
           breakpoints={{
             "@0.00": {
               slidesPerView: 1.5,

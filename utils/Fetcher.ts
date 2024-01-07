@@ -8,9 +8,9 @@ export async function NowPlayingMovie(page:any){
       var data = response.data.results;
       return data;
 }
-export async function TrendingMovie(){
+export async function TrendingMovie(page:any=1){
   const response = await axios.get(
-      `${ENDPOINT}/trending/movie/week?api_key=${API_KEY}&page=1`
+      `${ENDPOINT}/trending/movie/week?api_key=${API_KEY}&page=${page}`
     );
     var data = response.data.results;
     return data;
