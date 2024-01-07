@@ -5,6 +5,7 @@ import { NowPlayingMovie } from "@/utils/Fetcher";
 import ExpandedList from "@/components/ExpandedList";
 
 
+
 export default async function Home() {
   const nowPlaying = await NowPlayingMovie(1);
   return (
@@ -12,7 +13,7 @@ export default async function Home() {
       <SideBar />
       <Nav />
       <ExpandedList heading="Now Playing Movies" results={nowPlaying} type={"movie"} />
-      
+
     </main>
   );
 }

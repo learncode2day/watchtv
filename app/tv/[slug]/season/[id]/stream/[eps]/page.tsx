@@ -25,7 +25,7 @@ export default function StreamMovies({ params }: { params: { slug: string, id:st
         <div className="mt-20">
           <iframe
             src={streamLink}
-            className="border-white border-2 w-[22rem] h-[14rem]  md:w-[40rem] md:h-[24rem] mx-auto"
+            className="border-white border-2 md:w-[40rem] md:h-[24rem] mx-auto"
             allowFullScreen
           ></iframe>
           <h1 className="mt-2 p-2 font-medium text-teal-300">

@@ -1,7 +1,7 @@
 import axios from "axios";
 const ENDPOINT = process.env.TMDB_ENDPOINT;
 const API_KEY = process.env.TMDB_API_KEY;
-export async function NowPlayingMovie(page:any){
+export async function NowPlayingMovie(page:any=1){
     const response = await axios.get(
         `${ENDPOINT}/movie/now_playing?api_key=${API_KEY}&page=${page}`
       );
