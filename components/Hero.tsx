@@ -25,21 +25,16 @@ export default function Hero() {
         />
         <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
           <div className="flex flex-grow gap-2 items-center">
-            <Image
-              alt="Breathing app icon"
-              className="rounded-full w-10 h-11 bg-black"
-              src="/images/breathing-app-icon.jpeg"
-            />
             <div className="flex flex-col">
               <p className="text-tiny text-white/60">Use An Ad-Blocker</p>
               <p className="text-tiny text-white/60">
-                To get an ad-free experience.
+                For an ad-free experience.
               </p>
             </div>
           </div>
           <Link href={"https://discord.gg/xSUceYpr"}>
             <Button radius="full" color="secondary" size="md" variant="shadow">
-                <FaDiscord size={20}/>
+              <FaDiscord size={20} />
               Join Now
             </Button>
           </Link>
