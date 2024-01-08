@@ -21,11 +21,11 @@ export default function StreamMovies({ params }: { params: { slug: string } }) {
           </Button>
         </Link>
       </div>
-      <div className="flex flex-col m-3 justify-around md:flex-row">
+      <div className="flex flex-col m-3 justify-around lg:flex-row">
         <div className="mt-20">
           <iframe
             src={streamLink}
-            className="border-white border-2 md:w-[40rem] md:h-[24rem] mx-auto"
+            className="border-white border-2 w-[22rem] h-[12rem] md:w-[40rem] md:h-[24rem] mx-auto"
             allowFullScreen
           ></iframe>
           <h1 className="mt-2 p-2 font-medium text-teal-300">
@@ -64,7 +64,7 @@ export default function StreamMovies({ params }: { params: { slug: string } }) {
             </Button>
           </div>
         </div>
-        <div className=" mt-5 md:mt-32 w-fit">
+        <div className=" mt-5 lg:mt-32 w-fit">
           <Tips />
         </div>
       </div>

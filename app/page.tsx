@@ -8,6 +8,7 @@ import {
   TrendingMovie,
   AiringTvSeries,
 } from "@/utils/Fetcher";
+import Hero from "@/components/Hero";
 
 export default async function Home() {
   const nowPlaying = await NowPlayingMovie(1);
@@ -19,6 +20,7 @@ export default async function Home() {
     <main className="p-5 md:ml-20">
       <SideBar />
       <Nav />
+      <Hero/>
       <MediaList header="Now Playing Movies" expand={"movie/nowplaying"} results={nowPlaying} type={"movie"} />
       <MediaList header="Trending Movies" expand={"movie/trending"} results={trendingMovie} />
       <MediaList header="Airing Tv Series" expand={"tv/airing"} results={airingTv} type={"tv"} />

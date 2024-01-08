@@ -5,6 +5,8 @@ import {
   FaCouch,
   FaGear,
 } from "react-icons/fa6";
+
+
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import SideBarIcon from "./SideBarIcon";
 import Link from "next/link";
@@ -21,6 +23,7 @@ const SideBar = () => {
   
     
         <SideBarIcon icon={<FaDisplay size="16" />} text="Tv Series" link={'/'} />
+        
       
       
       <ThemeSwitcher />
