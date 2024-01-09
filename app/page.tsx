@@ -8,7 +8,7 @@ import {
   TrendingMovie,
   AiringTvSeries,
 } from "@/utils/Fetcher";
-import Hero from "@/components/Hero";
+
 
 export default async function Home() {
   const nowPlaying = await NowPlayingMovie(1);
