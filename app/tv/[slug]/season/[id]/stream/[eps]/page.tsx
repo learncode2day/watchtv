@@ -8,13 +8,15 @@ import Nav from "@/components/Nav";
 export default function StreamMovies({ params }: { params: { slug: string, id:string,eps:string } }) {
   const blackvid = `https://blackvid.space/embed?tmdb=${params.slug}&season=${params.id}&episode=${params.eps}`;
   const vidsrc = `https://vidsrc.to/embed/tv/${params.slug}/${params.id}/${params.eps}`;
+  const vidplay = `https://vidsrc.xyz/embed/tv?tmdb=${params.slug}&season=${params.id}&episode=${params.eps}`;
   const superEmbed = ` https://multiembed.mov/directstream.php?video_id=${params.slug}&tmdb=1&s=${params.id}&e=${params.eps}`;
+  const tvembed = `https://tvembed.cc/tv/${params.slug}/${params.id}/${params.eps}`;
   const [streamLink, setStreamLink] = useState(vidsrc);
   let isActive = (provider: any) => streamLink.includes(`${provider}`);
   return (
     <div>
       <Nav />
-      <div className="absoulte left-2 m-5">
+      <div className="ml-6">
         <Link href={`/tv/${params.slug}/season/${params.id}`}>
           <Button size="sm" variant="flat">
             <FaAngleLeft size={16} /> Back
@@ -22,23 +24,23 @@ export default function StreamMovies({ params }: { params: { slug: string, id:st
         </Link>
       </div>
       <div className="flex flex-col m-3 justify-around lg:flex-row">
-        <div className="mt-20">
+        <div>
           <iframe
             src={streamLink}
-            className="border-white border-2 w-[22rem] h-[12rem] md:w-[40rem] md:h-[24rem] mx-auto"
+            className="border-white border-2 w-[22rem] h-[12rem] md:w-[60rem] md:h-[34rem] mx-auto"
             allowFullScreen
           ></iframe>
           <h1 className="mt-2 p-2 font-medium text-teal-300">
-            Choose a Provider!
+          Choose a Provider! 
           </h1>
-          <div className="flex gap-2 ">
+          <div className="flex gap-2 flex-wrap">
             <Button
               onPress={() => {
                 setStreamLink(vidsrc);
               }}
               className="w-fit"
               variant="flat"
-              color={isActive("vidsrc") ? "success" : "default"}
+              color={isActive("vidsrc.to") ? "success" : "default"}
             >
               VidSrc
             </Button>
@@ -54,6 +56,16 @@ export default function StreamMovies({ params }: { params: { slug: string, id:st
             </Button>
             <Button
               onPress={() => {
+                setStreamLink(vidplay);
+              }}
+              className="w-fit"
+              variant="flat"
+              color={isActive("vidsrc.xyz") ? "success" : "default"}
+            >
+              VidPlay
+            </Button>
+            <Button
+              onPress={() => {
                 setStreamLink(blackvid);
               }}
               className="w-fit"
@@ -62,11 +74,24 @@ export default function StreamMovies({ params }: { params: { slug: string, id:st
             >
               Blackvid
             </Button>
+            <Button
+              onPress={() => {
+                setStreamLink(tvembed);
+              }}
+              className="w-fit"
+              variant="flat"
+              color={isActive("tvembed") ? "success" : "default"}
+            >
+              TvEmbed
+            </Button>
           </div>
         </div>
-        <div className=" mt-5 lg:mt-32 w-fit">
+        
+        
+      </div>
+      <div className="flex justify-center m-2">
+
           <Tips />
-        </div>
       </div>
     </div>
   );
