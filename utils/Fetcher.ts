@@ -70,3 +70,4 @@ export async function SeasonDetails(id: string,idx: string){
   var data = response.data.episodes;
   return data;
 }
+

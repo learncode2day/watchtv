@@ -7,10 +7,10 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 export default function StreamMovies({ params }: { params: { slug: string } }) {
   const blackvid = `https://blackvid.space/embed?tmdb=${params.slug}`;
-  const vidsrc = `https://vidsrc.to/embed/movie/${params.slug}`;
+  const vidsrc = `https://vidsrc.to/embed/movie/${params.slug}/`;
   const superEmbed = ` https://multiembed.mov/directstream.php?video_id=${params.slug}&tmdb=1`;
-  const vidplay = `https://vidsrc.xyz/embed/movie?tmdb=${params.slug}`
-  const tvembed = `https://tvembed.cc/movie/${params.slug}`
+  const vidplay = `https://vidsrc.xyz/embed/movie?tmdb=${params.slug}`;
+  const tvembed = `https://tvembed.cc/movie/${params.slug}`;
   const [streamLink, setStreamLink] = useState(vidsrc);
   let isActive = (provider: any) => streamLink.includes(`${provider}`);
   return (
@@ -28,7 +28,9 @@ export default function StreamMovies({ params }: { params: { slug: string } }) {
           <iframe
             src={streamLink}
             className="border-white border-2 w-[22rem] h-[12rem] md:w-[60rem] md:h-[34rem] mx-auto"
+            
             allowFullScreen
+            
           ></iframe>
           <h1 className="mt-2 p-2 font-medium text-teal-300">
             Choose a Provider!
@@ -82,14 +84,13 @@ export default function StreamMovies({ params }: { params: { slug: string } }) {
               variant="flat"
               color={isActive("tvembed") ? "success" : "default"}
             >
-             TvEmbed
+              TvEmbed
             </Button>
           </div>
         </div>
       </div>
       <div className="flex justify-center m-2">
-
-          <Tips />
+        <Tips />
       </div>
     </div>
   );
