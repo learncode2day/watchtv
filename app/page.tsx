@@ -20,11 +20,29 @@ export default async function Home() {
     <main className="p-5 md:ml-20">
       <SideBar />
       <Nav />
-      <Hero/>
-      <MediaList header="Now Playing Movies" expand={"movie/nowplaying"} results={nowPlaying} type={"movie"} />
-      <MediaList header="Trending Movies" expand={"movie/trending"} results={trendingMovie} />
-      <MediaList header="Airing Tv Series" expand={"tv/airing"} results={airingTv} type={"tv"} />
-      <MediaList header="Trending Tv Series" expand={"tv/trending"} results={trendingTv} />
+
+      <MediaList
+        header="Now Playing Movies"
+        expand={"movie/nowplaying"}
+        results={nowPlaying}
+        type={"movie"}
+      />
+      <MediaList
+        header="Trending Movies"
+        expand={"movie/trending"}
+        results={trendingMovie}
+      />
+      <MediaList
+        header="Airing Tv Series"
+        expand={"tv/airing"}
+        results={airingTv}
+        type={"tv"}
+      />
+      <MediaList
+        header="Trending Tv Series"
+        expand={"tv/trending"}
+        results={trendingTv}
+      />
     </main>
   );
 }
