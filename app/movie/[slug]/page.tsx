@@ -17,7 +17,7 @@ export default async function Movie({ params }: { params: { slug: string } }) {
   const backdropImage = `url("${TMDB_IMAGE_ENDPOINT}${result.backdrop_path}")`;
   return (
     <main
-      className="bg-fixed bg-contain bg-no-repeat sm:bg-cover h-[30vh] sm:h-[75vh]"
+      className="bg-cover bg-center bg-no-repeat sm:bg-cover h-[60vh] sm:h-[90vh] w-fit sm:w-full"
       style={{ backgroundImage: backdropImage }}
     >
       <Nav />
@@ -28,7 +28,7 @@ export default async function Movie({ params }: { params: { slug: string } }) {
           </Button>
         </Link>
       </div>
-      <div className=" absolute top-[20%] sm:top-[60%]">
+      <div className=" absolute top-[40%] sm:top-[65%]">
         <InfoCard result={result} />
         <h1 className="text-xl pt-5 px-5">Description</h1>
         <p className="text-xs  pl-5">{result.overview}</p>
