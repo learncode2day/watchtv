@@ -18,7 +18,7 @@ export default function MoviePlayer({ movieId, movieName }: any) {
       <div>
         <iframe
           src={streamLink}
-          className="border-slate-700 border-1 w-[22rem] h-[14rem] md:w-[60rem] md:h-[34rem] mx-auto"
+          className="border-slate-700 border-1 w-[21rem] h-[14rem] md:w-[60rem] md:h-[34rem] mx-auto"
           allowFullScreen
         ></iframe>
         <h1 className="mt-2 p-2 font-medium text-teal-300">

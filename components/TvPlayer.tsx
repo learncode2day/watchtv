@@ -20,7 +20,7 @@ export default function TvPlayer({ tvId, seasonId, epsId, tvName }: any) {
       <div>
         <iframe
           src={streamLink}
-          className="border-white border-2 w-[21rem] h-[12rem] md:w-[60rem] md:h-[34rem] mx-auto"
+          className="border-slate-700 border-1 w-[21rem] h-[12rem] md:w-[60rem] md:h-[34rem] mx-auto"
           allowFullScreen
         ></iframe>
         <h1 className="mt-2 p-2 font-medium text-teal-300">
