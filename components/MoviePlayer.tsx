@@ -14,9 +14,8 @@ export default function MoviePlayer({ movieId, movieName }: any) {
   const [streamLink, setStreamLink] = useState(vidsrc);
   let isActive = (provider: any) => streamLink.includes(`${provider}`);
   return (
-    <div className="flex flex-col m-3 justify-around lg:flex-row">
+    <div className="flex flex-col m-2 justify-around lg:flex-row">
       <div>
-        
         <iframe
           src={streamLink}
           className="border-slate-700 border-1 w-[22rem] h-[14rem] md:w-[60rem] md:h-[34rem] mx-auto"
