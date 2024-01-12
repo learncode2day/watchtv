@@ -2,7 +2,7 @@ import {
   FaHouse,
   FaClapperboard,
   FaDisplay,
-  FaCouch,
+  FaCircleInfo,
   FaGear,
 } from "react-icons/fa6";
 
@@ -19,10 +19,12 @@ const SideBar = () => {
   
         <SideBarIcon icon={<FaHouse size="16" />} text="Home" link={'/'} />
   
-        <SideBarIcon icon={<FaClapperboard size="16" />} text="Movies" link={'/'} />
+        <SideBarIcon icon={<FaClapperboard size="16" />} text="Movies" link={'/movie'} />
   
     
-        <SideBarIcon icon={<FaDisplay size="16" />} text="Tv Series" link={'/'} />
+        <SideBarIcon icon={<FaDisplay size="16" />} text="Tv Series" link={'/tv'} />
+
+        <SideBarIcon icon={<FaCircleInfo size="16"/>} text="Info" link={'/info'}/>
         
       
       

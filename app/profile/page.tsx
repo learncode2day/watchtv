@@ -2,10 +2,13 @@ import React from "react";
 import { Card, CardFooter, Image, Button } from "@nextui-org/react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa6";
+import Nav from "@/components/Nav";
+import SideBar from "@/components/Sidebar";
 
 export default function Profile() {
   return (
     <div className="p-10">
+      <Nav />
       <div className="flex  m-10">
         <Card isFooterBlurred radius="lg" className="border-none">
           <Image
@@ -17,17 +20,15 @@ export default function Profile() {
           />
           <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
             <p className="text-tiny text-white/80">Aryadev</p>
-            <Link href={"https://github.com/Aryadev19"}>
-              <Button
-                className="text-tiny text-white bg-black/20"
-                variant="flat"
-                color="default"
-                radius="lg"
-                size="sm"
-              >
-                <FaGithub size="20" />
-              </Button>{" "}
-            </Link>
+            <Button
+              className="text-tiny text-white bg-black/20"
+              variant="flat"
+              color="default"
+              radius="lg"
+              size="sm"
+            >
+              <FaGithub size="20" />
+            </Button>
           </CardFooter>
         </Card>
       </div>
@@ -41,7 +42,6 @@ export default function Profile() {
         series it has MultiSearch support.
       </div>
       <div className="text-center m-5 p-5 font-semibold text-xl">
-        {" "}
         Made with ❤️ By Aryadev!
       </div>
     </div>

@@ -8,7 +8,7 @@ import {
   TrendingMovie,
   AiringTvSeries,
 } from "@/utils/Fetcher";
-
+import Footer from "@/components/Footer";
 
 export default async function Home() {
   const nowPlaying = await NowPlayingMovie(1);
@@ -20,7 +20,6 @@ export default async function Home() {
     <main className="p-5 md:ml-20">
       <SideBar />
       <Nav />
-
       <MediaList
         header="Now Playing Movies"
         expand={"movie/nowplaying"}
@@ -33,16 +32,17 @@ export default async function Home() {
         results={trendingMovie}
       />
       <MediaList
+        header="Trending Tv Series"
+        expand={"tv/trending"}
+        results={trendingTv}
+      />
+      <MediaList
         header="Airing Tv Series"
         expand={"tv/airing"}
         results={airingTv}
         type={"tv"}
       />
-      <MediaList
-        header="Trending Tv Series"
-        expand={"tv/trending"}
-        results={trendingTv}
-      />
+      <Footer/>
     </main>
   );
 }

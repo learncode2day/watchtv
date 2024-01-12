@@ -15,6 +15,22 @@ export async function TrendingMovie(page:any=1){
     var data = response.data.results;
     return data;
 }
+export async function TopRatedMovie(page:any=1){
+  const response = await axios.get(
+      `${ENDPOINT}/movie/top_rated?api_key=${API_KEY}&page=${page}`
+    );
+    var data = response.data.results;
+    return data;
+}
+
+export async function UpcomingMovie(page:any=1){
+  const response = await axios.get(
+      `${ENDPOINT}/movie/upcoming?api_key=${API_KEY}&page=${page}`
+    );
+    var data = response.data.results;
+    return data;
+}
+
 export async function AiringTvSeries(){
   const response = await axios.get(
       `${ENDPOINT}/tv/on_the_air?api_key=${API_KEY}&page=1`
@@ -25,6 +41,14 @@ export async function AiringTvSeries(){
 export async function TrendingTvSeries(){
   const response = await axios.get(
       `${ENDPOINT}/trending/tv/week?api_key=${API_KEY}&page=1`
+    );
+    var data = response.data.results;
+    return data;
+}
+
+export async function TopRatedTvSeries(){
+  const response = await axios.get(
+      `${ENDPOINT}/tv/top_rated?api_key=${API_KEY}&page=1`
     );
     var data = response.data.results;
     return data;
@@ -70,4 +94,6 @@ export async function SeasonDetails(id: string,idx: string){
   var data = response.data.episodes;
   return data;
 }
+
+
 
