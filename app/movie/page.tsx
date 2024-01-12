@@ -23,16 +23,22 @@ export default async function MoviePage(){
         header="Trending Movies"
         expand={"movie/trending"}
         results={trendingMovie}
+        type={"movie"}
+
       />
       <MediaList
         header="Top-Rated Movies"
         expand={"movie/toprated"}
         results={popularMovie}
+        type={"movie"}
+
       />
       <MediaList
         header="UpComing Movies"
         expand={"movie/upcoming"}
         results={upcomingMovie}
+        type={"movie"}
+
       />
      
       <Footer/>
