@@ -13,6 +13,8 @@ export default function TvPlayer({ tvId, seasonId, epsId, tvName }: any) {
   const goEps = epsId < 9 ? `0${epsId}` : `${epsId}`;
   const gomovies = `https://playerhost.net/show/${tvName}/${goSeason}-${goEps}`;
   const smashystream = `https://embed.smashystream.com/playere.php?tmdb=${tvId}&season=${seasonId}&episode=${epsId}`
+  const remotestream = `https://remotestre.am/e/?tmdb=${tvId}&s=${seasonId}&e=${epsId}`
+  const twoembed = `https://www.2embed.cc/embedtv/${tvId}&s=${seasonId}&e=${epsId}`
   const [streamLink, setStreamLink] = useState(vidsrc);
   let isActive = (provider: any) => streamLink.includes(`${provider}`);
   return (
@@ -23,8 +25,8 @@ export default function TvPlayer({ tvId, seasonId, epsId, tvName }: any) {
           className="border-slate-700 border-1 w-[21rem] h-[12rem] md:w-[60rem] md:h-[34rem] mx-auto"
           allowFullScreen
         ></iframe>
-        <h1 className="mt-2 p-2 font-medium text-teal-300">
-          Choose a Provider!
+        <h1 className="mt-2 p-2 font-medium text-sm text-teal-300">
+          If current server doesn't work, please try other servers
         </h1>
         <div className="flex gap-2 flex-wrap">
           <Button
@@ -47,6 +49,7 @@ export default function TvPlayer({ tvId, seasonId, epsId, tvName }: any) {
           >
             MoviesApi
           </Button>
+          
           <Button
             onPress={() => {
               setStreamLink(superEmbed);
@@ -56,6 +59,16 @@ export default function TvPlayer({ tvId, seasonId, epsId, tvName }: any) {
             color={isActive("multiembed") ? "success" : "default"}
           >
             SuperEmbed
+          </Button>
+          <Button
+            onPress={() => {
+              setStreamLink(remotestream);
+            }}
+            className="w-fit"
+            variant="flat"
+            color={isActive("remotestre") ? "success" : "default"}
+          >
+            RemoteStream
           </Button>
           <Button
             onPress={() => {
@@ -96,6 +109,16 @@ export default function TvPlayer({ tvId, seasonId, epsId, tvName }: any) {
             color={isActive("tvembed") ? "success" : "default"}
           >
             TvEmbed
+          </Button>
+          <Button
+            onPress={() => {
+              setStreamLink(twoembed);
+            }}
+            className="w-fit"
+            variant="flat"
+            color={isActive("2embed") ? "success" : "default"}
+          >
+          2Embed
           </Button>
           <Button
             onPress={() => {

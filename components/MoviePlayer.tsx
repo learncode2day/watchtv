@@ -11,6 +11,8 @@ export default function MoviePlayer({ movieId, movieName }: any) {
   const moviesApi = `https://moviesapi.club/movie/${movieId}`
   const gomovies = `https://playerhost.net/movie/${movieName}`
   const smashystream = `https://embed.smashystream.com/playere.php?tmdb=${movieId}`
+  const remotestream = `https://remotestre.am/e/?tmdb=${movieId}`
+  const twoembed = `https://www.2embed.cc/embed/${movieId}`
   const [streamLink, setStreamLink] = useState(vidsrc);
   let isActive = (provider: any) => streamLink.includes(`${provider}`);
   return (
@@ -21,8 +23,8 @@ export default function MoviePlayer({ movieId, movieName }: any) {
           className="border-slate-700 border-1 w-[21rem] h-[14rem] md:w-[60rem] md:h-[34rem] mx-auto"
           allowFullScreen
         ></iframe>
-        <h1 className="mt-2 p-2 font-medium text-teal-300">
-          Choose a Provider!
+        <h1 className="mt-2 p-2 font-medium text-sm text-teal-300">
+        If current server doesn't work, please try other servers
         </h1>
         <div className="flex gap-2 flex-wrap">
           <Button
@@ -45,6 +47,7 @@ export default function MoviePlayer({ movieId, movieName }: any) {
           >
             MoviesApi
           </Button>
+          
           <Button
             onPress={() => {
               setStreamLink(superEmbed);
@@ -55,7 +58,16 @@ export default function MoviePlayer({ movieId, movieName }: any) {
           >
             SuperEmbed
           </Button>
-          
+          <Button
+            onPress={() => {
+              setStreamLink(remotestream);
+            }}
+            className="w-fit"
+            variant="flat"
+            color={isActive("remotestre") ? "success" : "default"}
+          >
+            RemoteStream
+          </Button>
           <Button
             onPress={() => {
               setStreamLink(vidplay);
@@ -95,6 +107,16 @@ export default function MoviePlayer({ movieId, movieName }: any) {
             color={isActive("tvembed") ? "success" : "default"}
           >
             TvEmbed
+          </Button>
+          <Button
+            onPress={() => {
+              setStreamLink(twoembed);
+            }}
+            className="w-fit"
+            variant="flat"
+            color={isActive("2embed") ? "success" : "default"}
+          >
+            2Embed
           </Button>
           <Button
             onPress={() => {

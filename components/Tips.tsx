@@ -19,7 +19,7 @@ export default function Tips() {
         Current doesn't work
       </span>
       <span>
-        Try changing servers provied
+        Try changing mirrors provied
         <br className="block sm:hidden" /> within the current player also
       </span>
       <span>
