@@ -17,6 +17,8 @@ export default async function TVPage(){
           header="Trending Tv Series"
           expand={"tv/trending"}
           results={trendingTv}
+          type={"tv"}
+
         />
         <MediaList
           header="Airing Tv Series"
