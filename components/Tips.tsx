@@ -15,10 +15,6 @@ export default function Tips() {
         <br className="block sm:hidden" /> For Best Experience
       </span>
       <span>
-        If you are on Android <br className="block sm:hidden" /> use{" "}
-        <span className="text-orange-400 font-semibold">Brave Browser!</span>
-      </span>
-      <span>
         Change to a different Provier <br className="block sm:hidden" /> If
         Current doesn't work
       </span>
@@ -27,10 +23,10 @@ export default function Tips() {
         <br className="block sm:hidden" /> within the current player also
       </span>
       <span>
-        For example <span className="text-indigo-100 font-semibold">echo</span>{" "}
+        For example <span className="text-indigo-500 font-semibold">echo</span>{" "}
         server in
         <br className="block sm:hidden" />{" "}
-        <span className="text-indigo-100 font-semibold">TvEmbed</span> doesn't
+        <span className="text-indigo-500 font-semibold">TvEmbed</span> doesn't
         work, try
         <br className="block sm:hidden" /> changing it to something else
       </span>
