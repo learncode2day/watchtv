@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-
+import ClarityScript from "@/components/ClarityScript";
 import { Providers } from "./providers";
-import { Analytics } from "@vercel/analytics/react";
 const inter = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500"],
@@ -24,7 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           {children}
-          <Analytics />
+          <ClarityScript/>
         </Providers>
       </body>
     </html>
