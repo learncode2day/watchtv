@@ -2,23 +2,27 @@ import Footer from "@/components/Footer";
 import MediaList from "@/components/MediaList";
 import Nav from "@/components/Nav";
 import SideBar from "@/components/Sidebar";
-import { AiringTvSeries, TopRatedTvSeries, TrendingTvSeries } from "@/utils/Fetcher";
+import {
+  AiringTvSeries,
+  TopRatedTvSeries,
+  TrendingTvSeries,
+} from "@/utils/Fetcher";
 
-export default async function TVPage(){
-    const airingTv = await AiringTvSeries();
-    const trendingTv = await TrendingTvSeries();
-    const topratedTv = await TopRatedTvSeries()
-    return(
-        <main className="p-5 md:ml-20">
-        <SideBar />
-        <Nav />
-       
+export default async function TVPage() {
+  const airingTv = await AiringTvSeries();
+  const trendingTv = await TrendingTvSeries();
+  const topratedTv = await TopRatedTvSeries();
+  return (
+    <main>
+      <SideBar />
+      <Nav />
+
+      <div className="p-5 md:ml-20">
         <MediaList
           header="Trending Tv Series"
           expand={"tv/trending"}
           results={trendingTv}
           type={"tv"}
-
         />
         <MediaList
           header="Airing Tv Series"
@@ -32,7 +36,8 @@ export default async function TVPage(){
           results={topratedTv}
           type={"tv"}
         />
-        <Footer/>
-      </main>
-    )
+        <Footer />
+      </div>
+    </main>
+  );
 }

@@ -17,32 +17,35 @@ export default async function Home() {
   const trendingTv = await TrendingTvSeries();
 
   return (
-    <main className="p-5 md:ml-20">
+    <main>
       <SideBar />
       <Nav />
-      <MediaList
-        header="Now Playing Movies"
-        expand={"movie/nowplaying"}
-        results={nowPlaying}
-        type={"movie"}
-      />
-      <MediaList
-        header="Trending Movies"
-        expand={"movie/trending"}
-        results={trendingMovie}
-      />
-      <MediaList
-        header="Trending Tv Series"
-        expand={"tv/trending"}
-        results={trendingTv}
-      />
-      <MediaList
-        header="Airing Tv Series"
-        expand={"tv/airing"}
-        results={airingTv}
-        type={"tv"}
-      />
-      <Footer/>
+
+      <div className="p-5 md:ml-20">
+        <MediaList
+          header="Now Playing Movies"
+          expand={"movie/nowplaying"}
+          results={nowPlaying}
+          type={"movie"}
+        />
+        <MediaList
+          header="Trending Movies"
+          expand={"movie/trending"}
+          results={trendingMovie}
+        />
+        <MediaList
+          header="Trending Tv Series"
+          expand={"tv/trending"}
+          results={trendingTv}
+        />
+        <MediaList
+          header="Airing Tv Series"
+          expand={"tv/airing"}
+          results={airingTv}
+          type={"tv"}
+        />
+        <Footer />
+      </div>
     </main>
   );
 }

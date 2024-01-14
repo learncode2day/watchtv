@@ -11,6 +11,7 @@ import { SearchIcon } from "./SearchIcon";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FaHouse } from "react-icons/fa6";
+import { BiSolidDonateHeart } from "react-icons/bi";
 import {Button, ButtonGroup} from "@nextui-org/react";
 
 
@@ -47,19 +48,13 @@ export default function Nav() {
       <NavbarContent as="div" className="items-center" justify="end">
         <Link href={'/'}>
         <Button size="sm" variant="flat">
-        <FaHouse size={16}/> Home
+        <FaHouse size={16}/>Home
         </Button>
         </Link>
-        <Link href={"/profile"}>
-          <Avatar
-            isBordered
-            as="button"
-            className="transition-transform mr-2"
-            color="primary"
-            name="Jason Hughes"
-            size="sm"
-            src="/profile.jpg"
-          />{" "}
+        <Link href={'https://ko-fi.com/primeflix'}>
+        <Button size="sm" variant="flat">
+        <BiSolidDonateHeart size={16}/> Donate
+        </Button>
         </Link>
       </NavbarContent>
     </Navbar>
