@@ -40,7 +40,7 @@ export default function Nav() {
           }}
           placeholder="Search"
           size="sm"
-          endContent={<SearchIcon size={18} />}
+          endContent={" "}
           type="search"
           onChange={handleInputChange}
         /></form>
