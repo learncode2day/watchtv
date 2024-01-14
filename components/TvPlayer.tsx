@@ -1,8 +1,21 @@
 "use client";
 import { Button } from "@nextui-org/react";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function TvPlayer({ tvId, seasonId, epsId, tvName }: any) {
+  const notify = () =>
+    toast.info("FebBox takes some time to load please wait!", {
+      position: "top-right",
+      autoClose: 8000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   const blackvid = `https://blackvid.space/embed?tmdb=${tvId}&season=${seasonId}&episode=${epsId}`;
   const vidsrc = `https://vidsrc.to/embed/tv/${tvId}/${seasonId}/${epsId}`;
   const vidplay = `https://vidsrc.xyz/embed/tv?tmdb=${tvId}&season=${seasonId}&episode=${epsId}`;
@@ -12,14 +25,27 @@ export default function TvPlayer({ tvId, seasonId, epsId, tvName }: any) {
   const goSeason = seasonId < 9 ? `0${seasonId}` : `${seasonId}`;
   const goEps = epsId < 9 ? `0${epsId}` : `${epsId}`;
   const gomovies = `https://playerhost.net/show/${tvName}/${goSeason}-${goEps}`;
-  const smashystream = `https://embed.smashystream.com/playere.php?tmdb=${tvId}&season=${seasonId}&episode=${epsId}`
-  const remotestream = `https://remotestre.am/e/?tmdb=${tvId}&s=${seasonId}&e=${epsId}`
-  const twoembed = `https://www.2embed.cc/embedtv/${tvId}&s=${seasonId}&e=${epsId}`
+  const smashystream = `https://embed.smashystream.com/playere.php?tmdb=${tvId}&season=${seasonId}&episode=${epsId}`;
+  const remotestream = `https://remotestre.am/e/?tmdb=${tvId}&s=${seasonId}&e=${epsId}`;
+  const twoembed = `https://www.2embed.cc/embedtv/${tvId}&s=${seasonId}&e=${epsId}`;
+  const susflix = `https://susflix.tv/api/embed/tv?id=${tvId}&s=${seasonId}&e=${epsId}`;
   const [streamLink, setStreamLink] = useState(vidsrc);
   let isActive = (provider: any) => streamLink.includes(`${provider}`);
   return (
     <div className="flex flex-col m-2 justify-around lg:flex-row">
       <div>
+        <ToastContainer
+          position="top-right"
+          autoClose={8000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
         <iframe
           src={streamLink}
           className="border-slate-700 border-1 w-[21rem] h-[12rem] md:w-[60rem] md:h-[34rem] mx-auto"
@@ -49,7 +75,7 @@ export default function TvPlayer({ tvId, seasonId, epsId, tvName }: any) {
           >
             MoviesApi
           </Button>
-          
+
           <Button
             onPress={() => {
               setStreamLink(superEmbed);
@@ -92,6 +118,17 @@ export default function TvPlayer({ tvId, seasonId, epsId, tvName }: any) {
           </Button>
           <Button
             onPress={() => {
+              setStreamLink(susflix);
+              notify();
+            }}
+            className="w-fit"
+            variant="flat"
+            color={isActive("susflix") ? "success" : "default"}
+          >
+            FebBox
+          </Button>
+          <Button
+            onPress={() => {
               setStreamLink(gomovies);
             }}
             className="w-fit"
@@ -118,7 +155,7 @@ export default function TvPlayer({ tvId, seasonId, epsId, tvName }: any) {
             variant="flat"
             color={isActive("2embed") ? "success" : "default"}
           >
-          2Embed
+            2Embed
           </Button>
           <Button
             onPress={() => {
