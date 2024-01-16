@@ -1,3 +1,4 @@
+"use server"
 import { Button, Code } from "@nextui-org/react";
 import Tips from "@/components/Tips";
 import { FaAngleLeft } from "react-icons/fa6";
@@ -13,16 +14,13 @@ export default async function StreamMovies({
 }) {
   const result = await findTV(params.slug);
   let aniInfo, animeId, animeSeason, animeEps, animeLink, animeStreamLink,animeDownloadLink;
-  if (result.languages[0] === "ja") {
     aniInfo = await getAnimeInfo(params.slug);
     animeId = aniInfo.id;
     animeSeason = aniInfo.seasons[Number(params.id) - 1];
     animeEps = animeSeason.episodes[Number(params.eps) - 1].id;
-    // console.log(result.languages[0]);
     animeLink = await watchAnime(animeEps, animeId);
     animeStreamLink = animeLink.headers.Referer;
     animeDownloadLink = animeLink.sources
-  }
 
   let name = result.name;
   name = name.toLowerCase().replaceAll(" ", "-");
