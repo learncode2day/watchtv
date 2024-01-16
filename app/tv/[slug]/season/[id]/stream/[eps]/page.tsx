@@ -1,4 +1,3 @@
-"use server";
 import { Button, Code } from "@nextui-org/react";
 import Tips from "@/components/Tips";
 import { FaAngleLeft } from "react-icons/fa6";
