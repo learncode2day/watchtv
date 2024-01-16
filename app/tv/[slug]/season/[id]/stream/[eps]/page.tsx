@@ -1,4 +1,4 @@
-"use server"
+"use server";
 import { Button, Code } from "@nextui-org/react";
 import Tips from "@/components/Tips";
 import { FaAngleLeft } from "react-icons/fa6";
@@ -13,14 +13,22 @@ export default async function StreamMovies({
   params: { slug: string; id: string; eps: string };
 }) {
   const result = await findTV(params.slug);
-  let aniInfo, animeId, animeSeason, animeEps, animeLink, animeStreamLink,animeDownloadLink;
+  let aniInfo,
+    animeId,
+    animeSeason,
+    animeEps,
+    animeLink,
+    animeStreamLink,
+    animeDownloadLink;
+  if (result.languages[0] === "ja") {
     aniInfo = await getAnimeInfo(params.slug);
     animeId = aniInfo.id;
     animeSeason = aniInfo.seasons[Number(params.id) - 1];
     animeEps = animeSeason.episodes[Number(params.eps) - 1].id;
     animeLink = await watchAnime(animeEps, animeId);
     animeStreamLink = animeLink.headers.Referer;
-    animeDownloadLink = animeLink.sources
+    animeDownloadLink = animeLink.sources;
+  }
 
   let name = result.name;
   name = name.toLowerCase().replaceAll(" ", "-");
@@ -35,7 +43,10 @@ export default async function StreamMovies({
         </Link>
       </div>
       {result.languages[0] === "ja" ? (
-        <AnimePlayer animeLink={animeStreamLink} downloadLinks={animeDownloadLink} />
+        <AnimePlayer
+          animeLink={animeStreamLink}
+          downloadLinks={animeDownloadLink}
+        />
       ) : (
         <TvPlayer
           tvId={params.slug}
