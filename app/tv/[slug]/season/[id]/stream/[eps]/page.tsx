@@ -12,22 +12,22 @@ export default async function StreamMovies({
   params: { slug: string; id: string; eps: string };
 }) {
   const result = await findTV(params.slug);
-  let aniInfo,
-    animeId,
-    animeSeason,
-    animeEps,
-    animeLink,
-    animeStreamLink,
-    animeDownloadLink;
-  if (result.languages[0] === "ja") {
-    aniInfo = await getAnimeInfo(params.slug);
-    animeId = aniInfo.id;
-    animeSeason = aniInfo.seasons[Number(params.id) - 1];
-    animeEps = animeSeason.episodes[Number(params.eps) - 1].id;
-    animeLink = await watchAnime(animeEps, animeId);
-    animeStreamLink = animeLink.headers.Referer;
-    animeDownloadLink = animeLink.sources;
-  }
+  // let aniInfo,
+  //   animeId,
+  //   animeSeason,
+  //   animeEps,
+  //   animeLink,
+  //   animeStreamLink,
+  //   animeDownloadLink;
+  // if (result.languages[0] === "ja") {
+  //   aniInfo = await getAnimeInfo(params.slug);
+  //   animeId = aniInfo.id;
+  //   animeSeason = aniInfo.seasons[Number(params.id) - 1];
+  //   animeEps = animeSeason.episodes[Number(params.eps) - 1].id;
+  //   animeLink = await watchAnime(animeEps, animeId);
+  //   animeStreamLink = animeLink.headers.Referer;
+  //   animeDownloadLink = animeLink.sources;
+  // }
 
   let name = result.name;
   name = name.toLowerCase().replaceAll(" ", "-");
@@ -41,19 +41,14 @@ export default async function StreamMovies({
           </Button>
         </Link>
       </div>
-      {result.languages[0] === "ja" ? (
-        <AnimePlayer
-          animeLink={animeStreamLink}
-          downloadLinks={animeDownloadLink}
-        />
-      ) : (
+      
         <TvPlayer
           tvId={params.slug}
           seasonId={params.id}
           epsId={params.eps}
           tvName={name}
         />
-      )}
+      
       <div className="flex justify-center m-2">
         <Tips />
       </div>
