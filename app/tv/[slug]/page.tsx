@@ -1,7 +1,7 @@
 import InfoCard from "@/components/InfoCard";
 import Nav from "@/components/Nav";
 import ProfileCard from "@/components/ProfileCard";
-import { findTV, getTVCasts } from "@/utils/Fetcher";
+import { findTV, getAnimeInfo, getTVCasts } from "@/utils/Fetcher";
 const TMDB_IMAGE_ENDPOINT = "https://image.tmdb.org/t/p/original";
 import { FaAngleLeft } from "react-icons/fa6";
 import { Button } from "@nextui-org/react";
@@ -10,6 +10,7 @@ import Link from "next/link";
 export default async function Movie({ params }: { params: { slug: string } }) {
   const result = await findTV(params.slug);
   var cast = await getTVCasts(params.slug);
+
   cast = cast.slice(0, 6);
   const backdropImage = `url("${TMDB_IMAGE_ENDPOINT}${result.backdrop_path}")`;
   return (

@@ -16,6 +16,7 @@ export default async function Home() {
   const airingTv = await AiringTvSeries();
   const trendingTv = await TrendingTvSeries();
 
+
   return (
     <main>
       <SideBar />
@@ -32,11 +33,13 @@ export default async function Home() {
           header="Trending Movies"
           expand={"movie/trending"}
           results={trendingMovie}
+          type="movie"
         />
         <MediaList
           header="Trending Tv Series"
           expand={"tv/trending"}
           results={trendingTv}
+          type="tv"
         />
         <MediaList
           header="Airing Tv Series"
@@ -44,6 +47,7 @@ export default async function Home() {
           results={airingTv}
           type={"tv"}
         />
+
         <Footer />
       </div>
     </main>

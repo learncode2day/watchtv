@@ -1,6 +1,7 @@
 import axios from "axios";
 const ENDPOINT = process.env.TMDB_ENDPOINT;
 const API_KEY = process.env.TMDB_API_KEY;
+const CONSUMET = process.env.CONSUMET_API_URL
 export async function NowPlayingMovie(page:any=1){
     const response = await axios.get(
         `${ENDPOINT}/movie/now_playing?api_key=${API_KEY}&page=${page}`
@@ -95,5 +96,18 @@ export async function SeasonDetails(id: string,idx: string){
   return data;
 }
 
+// ------------------------------------------------------------------------------------------------
+// ANIME REQUEST
+// ------------------------------------------------------------------------------------------------
+export async function getAnimeInfo(id: string){
+  const response = await axios.get(`${CONSUMET}/meta/tmdb/info/${id}?type=tv`);
+  var data = response.data;
+  return data;
+}
 
+export async function watchAnime(epsId:any,showId:any){
+  const response = await axios.get(`${CONSUMET}/meta/tmdb/watch/${epsId}?id=${showId}`);
+  var data = response.data;
+  return data;
+}
 
