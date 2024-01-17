@@ -99,8 +99,8 @@ export async function SeasonDetails(id: string,idx: string){
 // ------------------------------------------------------------------------------------------------
 // ANIME REQUEST
 // ------------------------------------------------------------------------------------------------
-export async function getAnimeInfo(id: string){
-  const response = await axios.get(`${CONSUMET}/meta/tmdb/info/${id}?type=tv`);
+export async function getAnimeInfo(id: any,type:any){
+  const response = await axios.get(`${CONSUMET}/meta/tmdb/info/${id}?type=${type}`);
   var data = response.data;
   return data;
 }
