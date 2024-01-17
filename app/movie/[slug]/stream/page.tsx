@@ -9,11 +9,11 @@ import { findMovie, getAnimeInfo, watchAnime } from "@/utils/Fetcher";
 export default async function StreamMovies({ params }: { params: { slug: string } }) {
 
   const result = await findMovie(params.slug);
-  const tmdb = await getAnimeInfo(params.slug, "movie");
-  // console.log(tmdb);
-  const showId = tmdb.id;
-  const watchId = tmdb.episodeId;
-  const streamLink = await watchAnime(watchId, showId);
+  // const tmdb = await getAnimeInfo(params.slug, "movie");
+  // // console.log(tmdb);
+  // const showId = tmdb.id;
+  // const watchId = tmdb.episodeId;
+  // const streamLink = await watchAnime(watchId, showId);
   // console.log(streamLink);
   let title = result.title
   title = title.toLowerCase().replaceAll(" ","-")
@@ -27,7 +27,7 @@ export default async function StreamMovies({ params }: { params: { slug: string 
           </Button>
         </Link>
       </div>
-     <MoviePlayer movieId={params.slug} movieName={title} watchLink={streamLink}/>
+     <MoviePlayer movieId={params.slug} movieName={title}/>
       <div className="flex justify-center m-2">
         <Tips />
       </div>

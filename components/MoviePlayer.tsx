@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function MoviePlayer({ movieId, movieName,watchLink }: any) {
+export default function MoviePlayer({ movieId, movieName }: any) {
   const notify = () =>
   toast.info("FebBox takes some time to load please wait!", {
     position: "top-right",
@@ -27,8 +27,7 @@ export default function MoviePlayer({ movieId, movieName,watchLink }: any) {
   const remotestream = `https://remotestre.am/e/?tmdb=${movieId}`
   const twoembed = `https://www.2embed.cc/embed/${movieId}`
   const susflix = `https://susflix.tv/api/embed/movie?id=${movieId}`
-  const defaultstream = watchLink.headers.Referer
-  const [streamLink, setStreamLink] = useState(defaultstream);
+  const [streamLink, setStreamLink] = useState(vidsrc);
   let isActive = (provider: any) => streamLink.includes(`${provider}`);
   return (
     <div className="flex flex-col m-2 justify-around lg:flex-row">
@@ -54,7 +53,7 @@ export default function MoviePlayer({ movieId, movieName,watchLink }: any) {
         If current server doesn't work, please try other servers
         </h1>
         <div className="flex gap-2 flex-wrap">
-        <Button
+        {/* <Button
             onPress={() => {
               setStreamLink(defaultstream);
             }}
@@ -63,7 +62,7 @@ export default function MoviePlayer({ movieId, movieName,watchLink }: any) {
             color={streamLink===defaultstream ? "success" : "default"}
           >
             Default
-          </Button>
+          </Button> */}
           <Button
             onPress={() => {
               setStreamLink(vidsrc);
