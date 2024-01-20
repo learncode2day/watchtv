@@ -9,6 +9,8 @@ import {
   AiringTvSeries,
 } from "@/utils/Fetcher";
 import Footer from "@/components/Footer";
+import SearchBar from "@/components/SearchBar";
+import HomeNav from "@/components/HomeNav";
 
 export default async function Home() {
   const nowPlaying = await NowPlayingMovie(1);
@@ -20,8 +22,10 @@ export default async function Home() {
   return (
     <main>
       <SideBar />
-      <Nav />
-
+      <HomeNav />
+      <div className="flex justify-center mt-2">
+        <SearchBar />
+      </div>
       <div className="p-5 md:ml-20">
         <MediaList
           header="Now Playing Movies"

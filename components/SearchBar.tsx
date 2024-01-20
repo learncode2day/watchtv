@@ -1,35 +1,27 @@
-"use client"
-import React, { useState } from "react";
-import {
-  Navbar,
-  NavbarContent,
-  NavbarItem,
-  Input,
-  Avatar,
-} from "@nextui-org/react";
+"use client";
+import { Button, Input } from "@nextui-org/react";
 import { SearchIcon } from "./SearchIcon";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FaHouse } from "react-icons/fa6";
-import { BiSolidDonateHeart } from "react-icons/bi";
-import {Button, ButtonGroup} from "@nextui-org/react";
-
-
-export default function Nav() {
+import { useState } from "react";
+import { IoSearchCircle, IoSearchCircleOutline } from "react-icons/io5";
+import { FaSearch } from "react-icons/fa";
+export default function SearchBar() {
   const router = useRouter();
-  const [value,setValue] = useState("")
+  const [value, setValue] = useState("");
 
-  const handleInputChange = (event:any) => {
+  const handleInputChange = (event: any) => {
     setValue(event.target.value);
-  }
-  const handleSubmit = (event:any) => {
+  };
+  const handleSubmit = (event: any) => {
     event.preventDefault();
-    router.push(`/search/${encodeURIComponent(value)}`)
-  }
+    router.push(`/search/${encodeURIComponent(value)}`);
+  };
   return (
-    <Navbar maxWidth="full">
-      <NavbarContent as="div" className="items-center" justify="start">
-        <form onSubmit={handleSubmit}>
+    <div className=" w-[80%] sm:w-[40%] p-5 rounded-2xl  bg-gradient-to-tr from-slate-900 to-gray-900 text-white shadow-lg">
+      <h1 className="text-center text-2xl font-medium p-2  text-white">
+        PrimeFlix
+      </h1>
+      <form onSubmit={handleSubmit}>
         <Input
           classNames={{
             label: "text-black/50 dark:text-white/90",
@@ -50,7 +42,7 @@ export default function Nav() {
               "group-data-[focused=true]:bg-default-200/50",
               "dark:group-data-[focused=true]:bg-default/60",
               "!cursor-text",
-            ],  
+            ],
           }}
           placeholder="Search"
           size="sm"
@@ -59,22 +51,12 @@ export default function Nav() {
           }
           type="search"
           onChange={handleInputChange}
-        /></form>
-      </NavbarContent>
-      <NavbarContent as="div" className="items-center" justify="end">
-        <Link href={'/'}>
-        <Button size="sm" variant="flat">
-        <FaHouse size={16}/>Home
-        </Button>
-        </Link>
-        <Link href={'https://ko-fi.com/primeflix'}>
-        <Button size="sm" variant="flat">
-        <BiSolidDonateHeart size={16}/> Donate
-        </Button>
-        </Link>
-      </NavbarContent>
-    </Navbar>
+        />
+      </form>
+      {/* <div className="flex justify-center p-2 pt-5 gap-3">
+        <Button variant="flat">Normal Search</Button>
+        <Button variant="flat">Anime Search</Button>
+      </div> */}
+    </div>
   );
 }
-
-

@@ -27,6 +27,7 @@ export default function MoviePlayer({ movieId, movieName }: any) {
   const remotestream = `https://remotestre.am/e/?tmdb=${movieId}`
   const twoembed = `https://www.2embed.cc/embed/${movieId}`
   const susflix = `https://susflix.tv/api/embed/movie?id=${movieId}`
+
   const [streamLink, setStreamLink] = useState(vidsrc);
   let isActive = (provider: any) => streamLink.includes(`${provider}`);
   return (

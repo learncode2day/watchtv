@@ -60,12 +60,12 @@ const MediaList = ({ header, expand, results, type }: any) => {
             </SwiperSlide>
           ))}
           <div className="swiper-button custom-prev-button left-0">
-            <Button isIconOnly variant="faded">
+            <Button isIconOnly variant="flat">
               <FaAngleLeft size={20} />
             </Button>
           </div>
           <div className="swiper-button custom-next-button right-0">
-            <Button isIconOnly variant="faded">
+            <Button isIconOnly variant="flat">
               <FaAngleRight size={20} />
             </Button>
           </div>

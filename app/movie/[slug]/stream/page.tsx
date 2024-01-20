@@ -14,7 +14,7 @@ export default async function StreamMovies({ params }: { params: { slug: string 
   // const showId = tmdb.id;
   // const watchId = tmdb.episodeId;
   // const streamLink = await watchAnime(watchId, showId);
-  // console.log(streamLink);
+  // // console.log(streamLink);
   let title = result.title
   title = title.toLowerCase().replaceAll(" ","-")
   return (
@@ -27,7 +27,7 @@ export default async function StreamMovies({ params }: { params: { slug: string 
           </Button>
         </Link>
       </div>
-     <MoviePlayer movieId={params.slug} movieName={title}/>
+     <MoviePlayer movieId={params.slug} movieName={title} />
       <div className="flex justify-center m-2">
         <Tips />
       </div>
