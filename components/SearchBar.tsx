@@ -55,14 +55,7 @@ export default function SearchBar() {
           onChange={handleInputChange}
         />
       </form>
-      <div className="flex justify-center p-2 pt-5 gap-3">
-        <Link href={"https://discord.com/invite/WFhcAHgS"}>
-          <Button variant="flat" color="secondary">
-            Join Our Discord Server Now!!!
-            <FaDiscord size={"20"} />
-          </Button>
-        </Link>
-      </div>
+      
     </div>
   );
 }
