@@ -3,37 +3,29 @@ import Tips from "@/components/Tips";
 import { FaAngleLeft } from "react-icons/fa6";
 import Link from "next/link";
 import Nav from "@/components/Nav";
-import TvPlayer from "@/components/TvPlayer";
-import { findTV, getAnimeInfo, watchAnime } from "@/utils/Fetcher";
+
+import { watchAnime } from "@/utils/Fetcher";
 import AnimePlayer from "@/components/AnimePlayer";
 export default async function StreamMovies({
   params,
 }: {
-  params: { slug: string; id: string; eps: string };
+  params: { slug: string; id: string };
 }) {
-  const result = await findTV(params.slug);
-
-
-  let name = result.name;
-  name = name.toLowerCase().replaceAll(" ", "-");
+  const stream = await watchAnime(params.id);
+  const watchLink = stream.headers.Referer;
   return (
     <div>
       <Nav />
       <div className="ml-6">
-        <Link href={`/tv/${params.slug}/season/${params.id}`}>
+        <Link href={`/anime/${params.slug}/season`}>
           <Button size="sm" variant="flat">
             <FaAngleLeft size={16} /> Back
           </Button>
         </Link>
       </div>
-      
-        <TvPlayer
-          tvId={params.slug}
-          seasonId={params.id}
-          epsId={params.eps}
-          tvName={name}
-        />
-      
+
+      <AnimePlayer animeLink={watchLink} />
+
       <div className="flex justify-center m-2">
         <Tips />
       </div>

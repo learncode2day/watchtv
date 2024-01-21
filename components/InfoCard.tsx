@@ -7,6 +7,10 @@ import { FaLayerGroup } from "react-icons/fa6";
 import Link from "next/link";
 
 export default function InfoCard({ result, type }: any) {
+  let title = result.title;
+  if (type === "anime") {
+    title = result.title.english;
+  }
   const genre = result.genres;
   const date = result.release_date
     ? result.release_date
@@ -45,7 +49,7 @@ export default function InfoCard({ result, type }: any) {
             <div className="flex justify-between items-start">
               <div className="flex flex-col gap-0">
                 <h3 className="font-semibold text-foreground/90 text-3xl py-2">
-                  {result.title || result.name}
+                  {title || result.title || result.name}
                 </h3>
                 <div className="flex justify-start gap-1 py-2">
                   <Chip size="sm" variant="bordered" radius="sm">
@@ -73,13 +77,22 @@ export default function InfoCard({ result, type }: any) {
                   </Chip>
                 </div>
                 <div className="mt-5">
-                  {result.first_air_date || result.startDate ? (
+                  {result.releaseDate ? (
+                    // Component for result.releaseDate
+                    <Link href={`/anime/${result.id}/season`}>
+                      <Button color="default" variant="ghost">
+                        <FaLayerGroup size="20" /> Episodes
+                      </Button>
+                    </Link>
+                  ) : result.first_air_date || result.startDate ? (
+                    // Component for result.first_air_date or result.startDate
                     <Link href={`${result.id}/season/1`}>
                       <Button color="default" variant="ghost">
                         <FaLayerGroup size="20" /> Seasons
                       </Button>
                     </Link>
                   ) : (
+                    // Default component if none of the conditions are met
                     <Link href={`/movie/${result.id}/stream`}>
                       <Button color="default" variant="ghost">
                         <FaCirclePlay size="20" /> Play

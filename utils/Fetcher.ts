@@ -99,15 +99,34 @@ export async function SeasonDetails(id: string,idx: string){
 // ------------------------------------------------------------------------------------------------
 // ANIME REQUEST
 // ------------------------------------------------------------------------------------------------
-export async function getAnimeInfo(id: any,type:any){
-  const response = await axios.get(`${CONSUMET}/meta/tmdb/info/${id}?type=${type}`);
+export async function getAnimeTrending(){
+  const response = await axios.get(`${CONSUMET}/meta/anilist/trending`);
+  var data = response.data.results;
+  return data;
+}
+
+export async function getAnimePopular(){
+  const response = await axios.get(`${CONSUMET}/meta/anilist/popular`);
+  var data = response.data.results;
+  return data;
+}
+
+export async function getAnimeInfo(id:any){
+  const response = await axios.get(`${CONSUMET}/meta/anilist/info/${id}`);
+  var data = response.data;
+  return data;
+
+}
+
+export async function watchAnime(epsId:any){
+  const response = await axios.get(`${CONSUMET}/meta/anilist/watch/${epsId}`);
   var data = response.data;
   return data;
 }
 
-export async function watchAnime(epsId:any,showId:any){
-  const response = await axios.get(`${CONSUMET}/meta/tmdb/watch/${epsId}?id=${showId}`);
-  var data = response.data;
-  return data;
+export async function searchAnime(query: any){
+ const response = await axios.get(`${CONSUMET}/meta/anilist/${query}`);
+ var data = response.data.results;
+ return data;
 }
 

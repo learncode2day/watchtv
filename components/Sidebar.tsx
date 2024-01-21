@@ -5,7 +5,7 @@ import {
   FaCircleInfo,
   FaGear,
 } from "react-icons/fa6";
-
+import { IoLogoOctocat } from "react-icons/io";
 
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import SideBarIcon from "./SideBarIcon";
@@ -17,12 +17,14 @@ const SideBar = () => {
                    shadow-lg fixed flex-row bottom-2 w-screen h-16 left-0 z-20 justify-center sm:justify-normal"
     >
   
-        <SideBarIcon icon={<FaHouse size="16" />} text="Home" link={'/'} />
+    
   
         <SideBarIcon icon={<FaClapperboard size="16" />} text="Movies" link={'/movie'} />
   
     
         <SideBarIcon icon={<FaDisplay size="16" />} text="Tv Series" link={'/tv'} />
+        <SideBarIcon icon={<IoLogoOctocat size="16" />} text="Anime" link={'/anime'} />
+
 
         <SideBarIcon icon={<FaCircleInfo size="16"/>} text="Info" link={'/info'}/>
         
