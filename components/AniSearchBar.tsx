@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { IoSearchCircle, IoSearchCircleOutline } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
+import Link from "next/link";
+import { FaDiscord } from "react-icons/fa6";
 export default function AniSearchBar() {
   const router = useRouter();
   const [value, setValue] = useState("");
@@ -53,10 +55,14 @@ export default function AniSearchBar() {
           onChange={handleInputChange}
         />
       </form>
-      {/* <div className="flex justify-center p-2 pt-5 gap-3">
-        <Button variant="flat">Normal Search</Button>
-        <Button variant="flat">Anime Search</Button>
-      </div> */}
+      <div className="flex justify-center p-2 pt-5 gap-3">
+        <Link href={"https://discord.com/invite/WFhcAHgS"}>
+          <Button variant="flat" color="secondary">
+            Join Our Discord Server Now!!!
+            <FaDiscord size={"20"} />
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 }

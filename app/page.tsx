@@ -1,6 +1,7 @@
 import Nav from "@/components/Nav";
 import SideBar from "@/components/Sidebar";
 import MediaList from "@/components/MediaList";
+import { FaDiscord, FaHouse } from "react-icons/fa6";
 
 import {
   TrendingTvSeries,
@@ -11,6 +12,8 @@ import {
 import Footer from "@/components/Footer";
 import SearchBar from "@/components/SearchBar";
 import HomeNav from "@/components/HomeNav";
+import { Button } from "@nextui-org/react";
+import Link from "next/link";
 
 export default async function Home() {
   const nowPlaying = await NowPlayingMovie(1);
@@ -25,6 +28,7 @@ export default async function Home() {
       <HomeNav />
       <div className="flex justify-center mt-2">
         <SearchBar />
+
       </div>
       <div className="p-5 md:ml-20">
         <MediaList

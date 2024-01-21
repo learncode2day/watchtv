@@ -10,7 +10,7 @@ import {
 import { SearchIcon } from "./SearchIcon";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FaHouse } from "react-icons/fa6";
+import { FaDiscord, FaHouse } from "react-icons/fa6";
 import { BiSolidDonateHeart } from "react-icons/bi";
 import {Button, ButtonGroup} from "@nextui-org/react";
 
@@ -63,13 +63,13 @@ export default function Nav() {
       </NavbarContent>
       <NavbarContent as="div" className="items-center" justify="end">
         <Link href={'/'}>
-        <Button size="sm" variant="flat">
+        <Button size="sm" variant="flat" color="primary">
         <FaHouse size={16}/>Home
         </Button>
         </Link>
-        <Link href={'https://ko-fi.com/primeflix'}>
-        <Button size="sm" variant="flat">
-        <BiSolidDonateHeart size={16}/> Donate
+        <Link href={'https://discord.com/invite/WFhcAHgS'}>
+        <Button size="sm" variant="flat" color="secondary">
+        <FaDiscord size={16}/> Discord
         </Button>
         </Link>
       </NavbarContent>

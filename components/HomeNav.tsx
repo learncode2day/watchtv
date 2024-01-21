@@ -20,17 +20,17 @@ export default function HomeNav() {
     <Navbar maxWidth="full">
       <NavbarContent as="div" className="items-center" justify="start">
       <Link href={'/'}>
-        <Button size="sm" variant="flat">
+        <Button size="sm" variant="flat" color="primary">
         <FaHouse size={16}/>Home
         </Button>
         </Link>
       </NavbarContent>
       <NavbarContent as="div" className="items-center" justify="end">
       <Link href={"https://discord.gg/WFhcAHgS"}>
-            <Button size="sm" variant="flat"><FaDiscord size={16}/>Discord</Button>
+            <Button size="sm" variant="flat" color="secondary"><FaDiscord size={16}/>Discord</Button>
         </Link>
         <Link href={'https://ko-fi.com/primeflix'}>
-        <Button size="sm" variant="flat">
+        <Button size="sm" variant="flat" color="warning">
         <BiSolidDonateHeart size={16}/> Donate
         </Button>
         </Link>
