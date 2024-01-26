@@ -43,7 +43,7 @@ const MovieCard = ({ result, type }: Prop) => {
       whileHover={{
         scale: 1.1,
       }}
-      transition={{ duration: 0.3, type: "spring", stiffness: 200 }}
+      transition={{ duration: 0.3, type: "spring", stiffness: 120 }}
     >
       <Link
         href={`/${result.media_type ? result.media_type : type}/${result.id}`}

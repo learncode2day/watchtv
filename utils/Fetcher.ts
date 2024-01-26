@@ -79,6 +79,24 @@ export async function relatedMovies(id: string){
   return data;
 }
 
+export async function relatedTV(id: string){
+  const response = await axios.get(`${ENDPOINT}/tv/${id}/recommendations?api_key=${API_KEY}`);
+  var data = response.data.results;
+  return data;
+}
+
+export async function getTrailerMovie(id:string){
+  const response = await axios.get(`${ENDPOINT}/movie/${id}/videos?api_key=${API_KEY}`);
+  var data = response.data.results;
+  return data;
+}
+
+export async function getTrailerTV(id:string){
+  const response = await axios.get(`${ENDPOINT}/tv/${id}/videos?api_key=${API_KEY}`);
+  var data = response.data.results;
+  return data;
+}
+
 export async function getMovieCasts(id: string){
   const response = await axios.get(`${ENDPOINT}/movie/${id}/credits?api_key=${API_KEY}`);
   var data = response.data.cast;

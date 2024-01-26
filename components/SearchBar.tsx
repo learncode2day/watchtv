@@ -19,8 +19,8 @@ export default function SearchBar() {
     router.push(`/search/${encodeURIComponent(value)}`);
   };
   return (
-    <div className=" w-[80%] sm:w-[40%] p-5 rounded-2xl  bg-gradient-to-tr from-slate-900 to-gray-900 text-white shadow-lg">
-      <h1 className="text-center text-2xl font-medium p-2  text-white">
+    <div className=" w-[80%] sm:w-[40%] p-5 rounded-2xl">
+      <h1 className="text-center text-2xl font-medium p-2  text-gray-500">
         PrimeFlix
       </h1>
       <form onSubmit={handleSubmit}>
@@ -55,7 +55,6 @@ export default function SearchBar() {
           onChange={handleInputChange}
         />
       </form>
-      
     </div>
   );
 }

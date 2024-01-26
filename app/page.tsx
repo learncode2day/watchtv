@@ -8,6 +8,7 @@ import {
   NowPlayingMovie,
   TrendingMovie,
   AiringTvSeries,
+  TopRatedTvSeries,
 } from "@/utils/Fetcher";
 import Footer from "@/components/Footer";
 import SearchBar from "@/components/SearchBar";
@@ -20,8 +21,7 @@ export default async function Home() {
   const trendingMovie = await TrendingMovie();
   const airingTv = await AiringTvSeries();
   const trendingTv = await TrendingTvSeries();
-
-
+  const topratedTv = await TopRatedTvSeries();
   return (
     <main>
       <SideBar />
@@ -47,6 +47,12 @@ export default async function Home() {
           header="Trending Tv Series"
           expand={"tv/trending"}
           results={trendingTv}
+          type="tv"
+        />
+        <MediaList
+          header="Top Rated Tv Series"
+          expand={"tv/toprated"}
+          results={topratedTv}
           type="tv"
         />
         <MediaList

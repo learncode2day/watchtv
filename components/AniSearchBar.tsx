@@ -19,7 +19,7 @@ export default function AniSearchBar() {
     router.push(`/anime/search/${encodeURIComponent(value)}`);
   };
   return (
-    <div className=" w-[80%] sm:w-[40%] p-5 rounded-2xl  bg-gradient-to-tr from-slate-900 to-gray-900 text-white shadow-lg">
+    <div className=" w-[80%] sm:w-[40%] p-5 rounded-2xl">
       <h1 className="text-center text-2xl font-medium p-2  text-white">
         PrimeFlix
       </h1>

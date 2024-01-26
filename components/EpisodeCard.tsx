@@ -15,7 +15,7 @@ export default function EpisodeCard({
   return (
     <div>
       <Link href={watchLink}>
-        <Card className="py-4 m-2 sm:m-6">
+        <Card className="py-4 m-2 sm:m-6" isBlurred>
           <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
             <p className="text-tiny uppercase font-bold">
               Episode {result.episode_number}

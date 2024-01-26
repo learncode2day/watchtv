@@ -2,8 +2,8 @@
 import InfoCard from "@/components/InfoCard";
 import Nav from "@/components/Nav";
 import ProfileCard from "@/components/ProfileCard";
-import { findMovie, getAnimeInfo, getMovieCasts, relatedMovies } from "@/utils/Fetcher";
-const TMDB_IMAGE_ENDPOINT = "https://image.tmdb.org/t/p/original";
+import {  getAnimeInfo } from "@/utils/Fetcher";
+
 
 import { FaAngleLeft } from "react-icons/fa6";
 import {Button} from "@nextui-org/react";

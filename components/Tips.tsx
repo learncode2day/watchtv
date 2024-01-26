@@ -25,14 +25,7 @@ export default function Tips() {
         Try changing mirrors provied
         <br className="block sm:hidden" /> within the current player also
       </span>
-      <span>
-        For example <span className="text-indigo-500 font-semibold">echo</span>{" "}
-        server in
-        <br className="block sm:hidden" />{" "}
-        <span className="text-indigo-500 font-semibold">TvEmbed</span> doesn't
-        work, try
-        <br className="block sm:hidden" /> changing it to something else
-      </span>
+      
     </Snippet>
   );
 }

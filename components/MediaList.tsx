@@ -14,7 +14,7 @@ import "swiper/css/navigation";
 const MediaList = ({ header, expand, results, type }: any) => {
   return (
     <div className="z-10 mt-10">
-      <div className="flex justify-between mx-5">
+      <div className="flex justify-between mx-1">
         <div className="ml-5 text-2xl font-medium">{header}</div>
         <Link href={expand ? expand : "#"}>
           <Button size="sm" variant="flat" className="mr-5">
