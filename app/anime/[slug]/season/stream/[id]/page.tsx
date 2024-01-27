@@ -12,7 +12,7 @@ export default async function StreamMovies({
   params: { slug: string; id: string };
 }) {
   const stream = await watchAnime(params.id);
-  const watchLink = stream.headers.Referer;
+  
   return (
     <div>
       <Nav />
@@ -24,7 +24,7 @@ export default async function StreamMovies({
         </Link>
       </div>
 
-      <AnimePlayer animeLink={watchLink} />
+      <AnimePlayer animeLink={stream} />
 
       <div className="flex justify-center m-2">
         <Tips />

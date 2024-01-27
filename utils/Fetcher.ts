@@ -123,27 +123,23 @@ export async function getAnimeTrending(){
   return data;
 }
 
-export async function getAnimePopular(){
-  const response = await axios.get(`${CONSUMET}/meta/anilist/popular`);
-  var data = response.data.results;
-  return data;
-}
+
 
 export async function getAnimeInfo(id:any){
-  const response = await axios.get(`${CONSUMET}/meta/anilist/info/${id}`);
+  const response = await axios.get(`${CONSUMET}/anime/gogoanime/info/${id}`);
   var data = response.data;
   return data;
 
 }
 
 export async function watchAnime(epsId:any){
-  const response = await axios.get(`${CONSUMET}/meta/anilist/watch/${epsId}`);
+  const response = await axios.get(`${CONSUMET}/anime/gogoanime/servers/${epsId}`);
   var data = response.data;
   return data;
 }
 
 export async function searchAnime(query: any){
- const response = await axios.get(`${CONSUMET}/meta/anilist/${query}`);
+ const response = await axios.get(`${CONSUMET}/anime/gogoanime/${query}`);
  var data = response.data.results;
  return data;
 }
