@@ -67,7 +67,7 @@ export default function Nav() {
         <FaHouse size={16}/>Home
         </Button>
         </Link>
-        <Link href={'https://discord.com/invite/WFhcAHgS'}>
+        <Link href={'https://discord.gg/GbW6gzAKgc'}>
         <Button size="sm" variant="flat" color="secondary">
         <FaDiscord size={16}/> Discord
         </Button>
