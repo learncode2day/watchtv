@@ -118,7 +118,7 @@ export async function SeasonDetails(id: string,idx: string){
 // ANIME REQUEST
 // ------------------------------------------------------------------------------------------------
 export async function getAnimeTrending(){
-  const response = await axios.get(`${CONSUMET}/meta/anilist/trending`);
+  const response = await axios.get(`${CONSUMET}/anime/gogoanime/top-airing`);
   var data = response.data.results;
   return data;
 }
