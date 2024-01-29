@@ -48,11 +48,12 @@ export default async function Movie({ params }: { params: { slug: string } }) {
         </div>
         <div>
           <h1 className="text-xl p-4">Trailer</h1>
-          <iframe
+          {trailer[0].key ? (<iframe
             src={`https://youtube.com/embed/${trailer[0].key}`}
             className="border-slate-700 border-1 w-[21rem] h-[14rem] md:w-[62rem] md:h-[34rem] mx-auto md:mx-5"
             allowFullScreen={true}
-          ></iframe>
+          ></iframe>) : null}
+          
         </div>
         <div>
           <h1 className="text-xl p-4">You may also like</h1>
