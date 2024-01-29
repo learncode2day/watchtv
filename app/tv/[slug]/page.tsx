@@ -18,8 +18,8 @@ export default async function Movie({ params }: { params: { slug: string } }) {
   const result = await findTV(params.slug);
   var cast = await getTVCasts(params.slug);
   var related = await relatedTV(params.slug);
-  // var trailer = await getTrailerTV(params.slug);
-  // trailer = trailer.filter((t: any) => t.type === "Trailer");
+  var trailer = await getTrailerTV(params.slug);
+  trailer = trailer.filter((t: any) => t.type === "Trailer");
   related = related.slice(0, 5);
   cast = cast.slice(0, 8);
   const backdropImage = `url("${TMDB_IMAGE_ENDPOINT}${result.backdrop_path}")`;
@@ -46,15 +46,16 @@ export default async function Movie({ params }: { params: { slug: string } }) {
             <ProfileCard key={c.id} path={c.profile_path} name={c.name} />
           ))}
         </div>
-        {/* <div>
+        <div>
           <h1 className="text-xl p-4">Trailer</h1>
-          {trailer[0].key ? (<iframe
+          {trailer.length > 0 && (<iframe
             src={`https://youtube.com/embed/${trailer[0].key}`}
             className="border-slate-700 border-1 w-[21rem] h-[14rem] md:w-[62rem] md:h-[34rem] mx-auto md:mx-5"
             allowFullScreen={true}
-          ></iframe>) : null}
+          ></iframe>)}
           
-        </div> */}
+        </div>
+        
         <div>
           <h1 className="text-xl p-4">You may also like</h1>
 
