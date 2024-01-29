@@ -18,8 +18,8 @@ export default async function Movie({ params }: { params: { slug: string } }) {
   const result = await findMovie(params.slug);
   var cast = await getMovieCasts(params.slug);
   var related = await relatedMovies(params.slug);
-  var trailer = await getTrailerMovie(params.slug);
-  trailer = trailer.filter((t: any) => t.type === "Trailer");
+  // var trailer = await getTrailerMovie(params.slug);
+  // trailer = trailer.filter((t: any) => t.type === "Trailer");
   related = related.slice(0, 5);
   cast = cast.slice(0, 8);
 
@@ -47,7 +47,7 @@ export default async function Movie({ params }: { params: { slug: string } }) {
             <ProfileCard key={c.id} path={c.profile_path} name={c.name} />
           ))}
         </div>
-        <div>
+        {/* <div>
           <h1 className="text-xl p-4">Trailer</h1>
           {trailer[0].key ? (<iframe
             src={`https://youtube.com/embed/${trailer[0].key}`}
@@ -55,7 +55,7 @@ export default async function Movie({ params }: { params: { slug: string } }) {
             allowFullScreen={true}
           ></iframe>): null}
           
-        </div>
+        </div> */}
         <div>
           <h1 className="text-xl p-4">You may also like</h1>
 
