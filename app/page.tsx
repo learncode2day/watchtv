@@ -9,6 +9,8 @@ import {
   TrendingMovie,
   AiringTvSeries,
   TopRatedTvSeries,
+  getMovieByGenre,
+  getTVByGenre,
 } from "@/utils/Fetcher";
 import Footer from "@/components/Footer";
 import SearchBar from "@/components/SearchBar";
@@ -23,6 +25,10 @@ export default async function Home() {
   const airingTv = await AiringTvSeries();
   const trendingTv = await TrendingTvSeries();
   const topratedTv = await TopRatedTvSeries();
+  const actionMovie = await getMovieByGenre("28");
+  const horrorMovie = await getMovieByGenre("27");
+  const thrillerMovie = await getMovieByGenre("53");
+  const actionTv = await getTVByGenre("10759");
   return (
     <main>
       <SideBar />
@@ -58,10 +64,25 @@ export default async function Home() {
           type="tv"
         />
         <MediaList
-          header="Airing Tv Series"
-          expand={"tv/airing"}
-          results={airingTv}
-          type={"tv"}
+          header="Action Tv Series"
+          results={actionTv}
+          type="tv"
+        />
+        
+        <MediaList
+          header="Horror Movies"
+          results={horrorMovie}
+          type={"movie"}
+        />
+        <MediaList
+          header="Thriller Movies"
+          results={thrillerMovie}
+          type={"movie"}
+        />
+        <MediaList
+          header="Action Movies"
+          results={actionMovie}
+          type={"movie"}
         />
 
         <Footer />

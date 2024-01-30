@@ -15,7 +15,7 @@ export default function HeroCard({ result, idx, type }: any) {
       >
         <CardHeader className="absolute z-10 top-1 flex-col items-start">
           <p className="text-medium text-white/60 uppercase font-bold text-yellow-500">
-            # {idx} Trending
+            # {idx} on Trending
           </p>
           <h4 className="text-white/90 font-medium text-5xl">
             {result.title || result.name}

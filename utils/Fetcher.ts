@@ -114,6 +114,18 @@ export async function SeasonDetails(id: string,idx: string){
   return data;
 }
 
+export async function getMovieByGenre(id: string){
+  const response = await axios.get(`${ENDPOINT}/discover/movie?api_key=${API_KEY}&sort_by=vote_count.desc&with_genres=${id}`);
+  var data = response.data.results;
+  return data;
+}
+
+export async function getTVByGenre(id: string){
+  const response = await axios.get(`${ENDPOINT}/discover/tv?api_key=${API_KEY}&sort_by=vote_count.desc&with_genres=${id}`);
+  var data = response.data.results;
+  return data;
+}
+
 // ------------------------------------------------------------------------------------------------
 // ANIME REQUEST
 // ------------------------------------------------------------------------------------------------

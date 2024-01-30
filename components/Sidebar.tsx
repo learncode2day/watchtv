@@ -14,7 +14,7 @@ const SideBar = () => {
   return (
     <div
       className="sm:fixed sm:top-32 sm:gap-5 sm:left-2 sm:h-screen sm:w-16 flex sm:flex-col
-                   shadow-lg fixed flex-row bottom-2 w-screen h-16 left-0 z-20 justify-center sm:justify-normal"
+                   shadow-lg fixed flex-row bottom-2 w-screen h-16 left-0 z-20 justify-center sm:justify-normal bg-slate-700/80 rounded-3xl pt-1 sm:bg-transparent"
     >
   
     

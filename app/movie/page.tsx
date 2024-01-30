@@ -9,6 +9,7 @@ import {
   TopRatedMovie,
   TrendingMovie,
   UpcomingMovie,
+  getMovieByGenre,
 } from "@/utils/Fetcher";
 
 export default async function MoviePage() {
@@ -16,6 +17,9 @@ export default async function MoviePage() {
   const trendingMovie = await TrendingMovie();
   const popularMovie = await TopRatedMovie();
   const upcomingMovie = await UpcomingMovie();
+  const actionMovie = await getMovieByGenre("28");
+  const horrorMovie = await getMovieByGenre("27");
+  const thrillerMovie = await getMovieByGenre("53");
   return (
     <main>
       <SideBar />
@@ -28,10 +32,19 @@ export default async function MoviePage() {
           results={nowPlaying}
           type={"movie"}
         />
+         <MediaList
+          header="Horror Movies"
+          results={horrorMovie}
+          type={"movie"}
+        />
         <MediaList
-          header="Trending Movies"
-          expand={"movie/trending"}
-          results={trendingMovie}
+          header="Thriller Movies"
+          results={thrillerMovie}
+          type={"movie"}
+        />
+        <MediaList
+          header="Action Movies"
+          results={actionMovie}
           type={"movie"}
         />
         <MediaList

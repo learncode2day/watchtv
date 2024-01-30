@@ -7,12 +7,17 @@ import {
   AiringTvSeries,
   TopRatedTvSeries,
   TrendingTvSeries,
+  getTVByGenre,
 } from "@/utils/Fetcher";
 
 export default async function TVPage() {
   const airingTv = await AiringTvSeries();
   const trendingTv = await TrendingTvSeries();
   const topratedTv = await TopRatedTvSeries();
+  const crimeTv = await getTVByGenre("80");
+  const documentTv = await getTVByGenre("99");
+  const actionTv = await getTVByGenre("10759");
+  const dramatv = await getTVByGenre("18");
   return (
     <main>
       <SideBar />
@@ -21,9 +26,24 @@ export default async function TVPage() {
       <div className="p-5 md:ml-20">
         <HeroSlider results={trendingTv} type={"tv"}/>
         <MediaList
-          header="Trending Tv Series"
-          expand={"tv/trending"}
-          results={trendingTv}
+          header="Top-Rated Tv Series"
+          expand={"tv/toprated"}
+          results={topratedTv}
+          type={"tv"}
+        />
+        <MediaList
+          header="Crime Tv Series"
+          results={crimeTv}
+          type={"tv"}
+        />
+        <MediaList
+          header="Action Tv Series"
+          results={actionTv}
+          type={"tv"}
+        />
+        <MediaList
+          header="Drama Tv Series"
+          results={dramatv}
           type={"tv"}
         />
         <MediaList
@@ -33,9 +53,8 @@ export default async function TVPage() {
           type={"tv"}
         />
         <MediaList
-          header="Top-Rated Tv Series"
-          expand={"tv/toprated"}
-          results={topratedTv}
+          header="Documentary Tv Series"
+          results={documentTv}
           type={"tv"}
         />
         <Footer />
