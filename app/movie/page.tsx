@@ -1,4 +1,6 @@
 import Footer from "@/components/Footer";
+import HeroCard from "@/components/HeroCard";
+import HeroSlider from "@/components/HeroSlider";
 import MediaList from "@/components/MediaList";
 import Nav from "@/components/Nav";
 import SideBar from "@/components/Sidebar";
@@ -18,8 +20,8 @@ export default async function MoviePage() {
     <main>
       <SideBar />
       <Nav />
-
       <div className="p-5 md:ml-20">
+      <HeroSlider results={trendingMovie} type={"movie"}/>
         <MediaList
           header="Now Playing Movies"
           expand={"movie/nowplaying"}

@@ -25,12 +25,12 @@ export default async function Movie({ params }: { params: { slug: string } }) {
   const backdropImage = `url("${TMDB_IMAGE_ENDPOINT}${result.backdrop_path}")`;
   return (
     <main
-      className="bg-center bg-cover bg-no-repeat sm:bg-cover h-[60vh] sm:h-[90vh] w-fit sm:w-full"
+      className="bg-center sm:bg-right-top bg-cover bg-no-repeat sm:bg-cover h-[60vh] sm:h-[90vh] w-fit sm:w-full"
       style={{ backgroundImage: backdropImage }}
     >
       <Nav />
       <div className="ml-5 mt-3">
-        <Link href={`/`}>
+        <Link href={`/tv`}>
           <Button size="sm" variant="flat">
             <FaAngleLeft size={16} /> Back
           </Button>
