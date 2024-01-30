@@ -15,7 +15,7 @@ import SearchBar from "@/components/SearchBar";
 import HomeNav from "@/components/HomeNav";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
-import HeroSlider from "@/components/HeroSlider";
+
 
 export default async function Home() {
   const nowPlaying = await NowPlayingMovie(1);
@@ -32,7 +32,7 @@ export default async function Home() {
 
       </div>
       <div className="p-5 md:ml-20">
-        <HeroSlider results={trendingMovie} type={"movie"}/>
+        
         <MediaList
           header="Now Playing Movies"
           expand={"movie/nowplaying"}
