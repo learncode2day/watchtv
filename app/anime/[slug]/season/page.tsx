@@ -15,7 +15,6 @@ export default async function Season({
   const result = await getAnimeInfo(params.slug);
   let episodes = result.episodes;
 
-
   return (
     <div className="w-full overflow-hidden">
       <Nav />

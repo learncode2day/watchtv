@@ -11,7 +11,7 @@ export default function AnimePlayer({ animeLink }: any) {
     <div>
       <iframe
         src={streamLink}
-        className="border-slate-700 border-1 w-[21rem] h-[14rem] md:w-[60rem] md:h-[34rem] mx-auto"
+        className="border-slate-700 border-1 w-[21rem] h-[14rem] md:w-[60rem] md:h-[34rem] mx-auto overflow-hidden"
         allowFullScreen
       ></iframe>
       <h1 className="mt-2 p-2 font-medium text-sm text-teal-300">
@@ -19,7 +19,7 @@ export default function AnimePlayer({ animeLink }: any) {
       </h1>
       <div className="flex gap-2 flex-wrap">
           {animeLink.map((link:any) => (
-            <Button onPress={() => {
+            <Button variant="flat" onPress={() => {
               setStreamLink(link.url);
             }}>{link.name}</Button>
           ))}

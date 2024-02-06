@@ -130,7 +130,13 @@ export async function getTVByGenre(id: string){
 // ANIME REQUEST
 // ------------------------------------------------------------------------------------------------
 export async function getAnimeTrending(){
-  const response = await axios.get(`${CONSUMET}/anime/gogoanime/top-airing`);
+  const response = await axios.get(`${CONSUMET}/meta/anilist/trending`);
+  var data = response.data.results;
+  return data;
+}
+
+export async function getAnimePopular(){
+  const response = await axios.get(`${CONSUMET}/meta/anilist/popular`);
   var data = response.data.results;
   return data;
 }
@@ -138,7 +144,7 @@ export async function getAnimeTrending(){
 
 
 export async function getAnimeInfo(id:any){
-  const response = await axios.get(`${CONSUMET}/anime/gogoanime/info/${id}`);
+  const response = await axios.get(`${CONSUMET}/meta/anilist/info/${id}`);
   var data = response.data;
   return data;
 
@@ -151,8 +157,10 @@ export async function watchAnime(epsId:any){
 }
 
 export async function searchAnime(query: any){
- const response = await axios.get(`${CONSUMET}/anime/gogoanime/${query}`);
+ const response = await axios.get(`${CONSUMET}/meta/anilist/${query}`);
  var data = response.data.results;
  return data;
 }
+
+
 

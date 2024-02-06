@@ -4,10 +4,11 @@ import HomeNav from "@/components/HomeNav";
 import MediaList from "@/components/MediaList";
 import Nav from "@/components/Nav";
 import SideBar from "@/components/Sidebar";
-import { getAnimeTrending } from "@/utils/Fetcher";
+import { getAnimePopular, getAnimeTrending } from "@/utils/Fetcher";
 
 export default async function MoviePage() {
   const trendingAnime = await getAnimeTrending();
+  const popularAnime = await getAnimePopular();
   return (
     <main>
       <SideBar />
@@ -20,6 +21,12 @@ export default async function MoviePage() {
           header="Trending Anime"
           expand={"#"}
           results={trendingAnime}
+          type={"anime"}
+        />
+        <MediaList
+          header="Popular Anime"
+          expand={"#"}
+          results={popularAnime}
           type={"anime"}
         />
         
