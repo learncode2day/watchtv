@@ -1,20 +1,15 @@
 "use client";
 import { Button } from "@nextui-org/react";
 import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
+import toast, { Toaster } from "react-hot-toast";
 export default function TvPlayer({ tvId, seasonId, epsId, tvName }: any) {
   const notify = () =>
-    toast.info("FebBox takes some time to load please wait!", {
-      position: "top-right",
-      autoClose: 8000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
+    toast("Changing The Server.", {
+      icon: "👍",
+      style: {
+        background: "transparent",
+        backdropFilter: "blur(20px)",
+      },
     });
   const blackvid = `https://blackvid.space/embed?tmdb=${tvId}&season=${seasonId}&episode=${epsId}`;
   const vidsrc = `https://vidsrc.to/embed/tv/${tvId}/${seasonId}/${epsId}`;
@@ -34,18 +29,7 @@ export default function TvPlayer({ tvId, seasonId, epsId, tvName }: any) {
   return (
     <div className="flex flex-col m-2 justify-around lg:flex-row">
       <div>
-        <ToastContainer
-          position="top-right"
-          autoClose={8000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="dark"
-        />
+        <Toaster />
         <iframe
           src={streamLink}
           className="border-slate-700 border-1 w-[21rem] h-[12rem] md:w-[60rem] md:h-[34rem] mx-auto"
@@ -58,20 +42,24 @@ export default function TvPlayer({ tvId, seasonId, epsId, tvName }: any) {
           <Button
             onPress={() => {
               setStreamLink(vidsrc);
+              notify();
             }}
             className="w-fit"
             variant="flat"
             color={isActive("vidsrc.to") ? "success" : "default"}
+            size="sm"
           >
             VidSrc
           </Button>
           <Button
             onPress={() => {
               setStreamLink(moviesapi);
+              notify();
             }}
             className="w-fit"
             variant="flat"
             color={isActive("moviesapi") ? "success" : "default"}
+            size="sm"
           >
             MoviesApi
           </Button>
@@ -79,40 +67,48 @@ export default function TvPlayer({ tvId, seasonId, epsId, tvName }: any) {
           <Button
             onPress={() => {
               setStreamLink(superEmbed);
+              notify();
             }}
             className="w-fit"
             variant="flat"
             color={isActive("multiembed") ? "success" : "default"}
+            size="sm"
           >
             SuperEmbed
           </Button>
           <Button
             onPress={() => {
               setStreamLink(remotestream);
+              notify();
             }}
             className="w-fit"
             variant="flat"
             color={isActive("remotestre") ? "success" : "default"}
+            size="sm"
           >
             RemoteStream
           </Button>
           <Button
             onPress={() => {
               setStreamLink(vidplay);
+              notify();
             }}
             className="w-fit"
             variant="flat"
             color={isActive("vidsrc.xyz") ? "success" : "default"}
+            size="sm"
           >
             VidPlay
           </Button>
           <Button
             onPress={() => {
               setStreamLink(blackvid);
+              notify();
             }}
             className="w-fit"
             variant="flat"
             color={isActive("blackvid") ? "success" : "default"}
+            size="sm"
           >
             Blackvid
           </Button>
@@ -124,46 +120,55 @@ export default function TvPlayer({ tvId, seasonId, epsId, tvName }: any) {
             className="w-fit"
             variant="flat"
             color={isActive("susflix") ? "success" : "default"}
+            size="sm"
           >
             FebBox
           </Button>
           <Button
             onPress={() => {
               setStreamLink(gomovies);
+              notify();
             }}
             className="w-fit"
             variant="flat"
             color={isActive("playerhost") ? "success" : "default"}
+            size="sm"
           >
             GoMovies
           </Button>
           <Button
             onPress={() => {
               setStreamLink(tvembed);
+              notify();
             }}
             className="w-fit"
             variant="flat"
             color={isActive("tvembed") ? "success" : "default"}
+            size="sm"
           >
             TvEmbed
           </Button>
           <Button
             onPress={() => {
               setStreamLink(twoembed);
+              notify();
             }}
             className="w-fit"
             variant="flat"
             color={isActive("2embed") ? "success" : "default"}
+            size="sm"
           >
             2Embed
           </Button>
           <Button
             onPress={() => {
               setStreamLink(smashystream);
+              notify();
             }}
             className="w-fit"
             variant="flat"
             color={isActive("smashystream") ? "success" : "default"}
+            size="sm"
           >
             SmashyStream
           </Button>
