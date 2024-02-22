@@ -17,6 +17,7 @@ import SearchBar from "@/components/SearchBar";
 import HomeNav from "@/components/HomeNav";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
+import HeroSlider from "@/components/HeroSlider";
 
 
 export default async function Home() {
@@ -33,11 +34,9 @@ export default async function Home() {
     <main>
       <SideBar />
       <HomeNav />
-      <div className="flex justify-center mt-2">
-        <SearchBar />
-
-      </div>
+      
       <div className="p-5 md:ml-20">
+      <HeroSlider results={trendingMovie} type={"movie"}/>
         
         <MediaList
           header="Now Playing Movies"
