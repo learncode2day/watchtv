@@ -23,12 +23,12 @@ export default function RootLayout({
       <head>
       <meta name="monetag" content="6609151acc6ca0fa38eae33c4a90fe53"/>
       </head>
-      <script src="https://alwingulla.com/88/tag.min.js" data-zone="46726" async data-cfasync="false"></script>
       <body className={inter.className}>
         <Providers>
           {children}
           <ClarityScript />
         </Providers>
+      <script src="https://alwingulla.com/88/tag.min.js" data-zone="46726" async data-cfasync="false"></script>
       </body>
     </html>
   );
