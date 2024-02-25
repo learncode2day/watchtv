@@ -18,9 +18,7 @@ export default function Tips() {
         Change to a different Provier <br className="block sm:hidden" /> If
         Current doesn't work
       </span>
-      <span>
-       <span className="text-orange-500 font-semibold">FebBox</span>  Loading time is slow,<br className="block sm:hidden" /> Wait for sometime it will load
-      </span>
+      
       <span>
         Try changing mirrors provied
         <br className="block sm:hidden" /> within the current player also

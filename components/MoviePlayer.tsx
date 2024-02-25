@@ -23,6 +23,7 @@ export default function MoviePlayer({ movieId, movieName }: any) {
   const remotestream = `https://remotestre.am/e/?tmdb=${movieId}`;
   const twoembed = `https://www.2embed.cc/embed/${movieId}`;
   const susflix = `https://susflix.tv/api/embed/movie?id=${movieId}`;
+  const justbinge = `https://justbinge.lol/embed/movie/${movieId}`
 
   const [streamLink, setStreamLink] = useState(vidsrc);
   let isActive = (provider: any) => streamLink.includes(`${provider}`);
@@ -114,15 +115,15 @@ export default function MoviePlayer({ movieId, movieName }: any) {
           </Button>
           <Button
             onPress={() => {
-              setStreamLink(susflix);
+              setStreamLink(justbinge);
               notify();
             }}
             className="w-fit"
             variant="flat"
-            color={isActive("susflix") ? "success" : "default"}
+            color={isActive("justbinge") ? "success" : "default"}
             size="sm"
           >
-            FebBox
+            JustBinge
           </Button>
           <Button
             onPress={() => {

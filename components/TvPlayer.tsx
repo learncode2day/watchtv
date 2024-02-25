@@ -24,6 +24,7 @@ export default function TvPlayer({ tvId, seasonId, epsId, tvName }: any) {
   const remotestream = `https://remotestre.am/e/?tmdb=${tvId}&s=${seasonId}&e=${epsId}`;
   const twoembed = `https://www.2embed.cc/embedtv/${tvId}&s=${seasonId}&e=${epsId}`;
   const susflix = `https://susflix.tv/api/embed/tv?id=${tvId}&s=${seasonId}&e=${epsId}`;
+  const justbinge = `https://justbinge.lol/embed/tv/${tvId}/${seasonId}/${epsId}`;
   const [streamLink, setStreamLink] = useState(vidsrc);
   let isActive = (provider: any) => streamLink.includes(`${provider}`);
   return (
@@ -114,15 +115,15 @@ export default function TvPlayer({ tvId, seasonId, epsId, tvName }: any) {
           </Button>
           <Button
             onPress={() => {
-              setStreamLink(susflix);
+              setStreamLink(justbinge);
               notify();
             }}
             className="w-fit"
             variant="flat"
-            color={isActive("susflix") ? "success" : "default"}
+            color={isActive("justbinge") ? "success" : "default"}
             size="sm"
           >
-            FebBox
+            JustBinge
           </Button>
           <Button
             onPress={() => {
