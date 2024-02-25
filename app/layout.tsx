@@ -20,11 +20,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-    
+      <head>
+      <meta name="monetag" content="6609151acc6ca0fa38eae33c4a90fe53"/>
+      </head>
       <body className={inter.className}>
         <Providers>
           {children}
-          <ClarityScript/>
+          <ClarityScript />
         </Providers>
       </body>
     </html>
