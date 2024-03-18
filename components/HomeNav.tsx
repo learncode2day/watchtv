@@ -64,10 +64,10 @@ export default function HomeNav() {
         /></form>
       </NavbarContent>
       <NavbarContent as="div" className="items-center" justify="end">
-      <Link href={"https://discord.gg/GbW6gzAKgc"}>
+      <Link href={"https://discord.com/404"}>
             <Button size="sm" variant="flat" color="secondary"><FaDiscord size={16}/>Discord</Button>
         </Link>
-        <Link href={'https://ko-fi.com/primeflix'}>
+        <Link href={'https://show.starnode.host'}>
         <Button size="sm" variant="flat" color="warning">
         <BiSolidDonateHeart size={16}/> Donate
         </Button>

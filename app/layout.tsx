@@ -9,8 +9,8 @@ const inter = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "PrimeFlix",
-  description: "Watch movies and series for free",
+  title: "WatchTV",
+  description: "Watch movies, animes, & series for free.",
 };
 
 export default function RootLayout({

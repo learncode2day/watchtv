@@ -21,7 +21,7 @@ export default function AniSearchBar() {
   return (
     <div className=" w-[80%] sm:w-[40%] p-5 rounded-2xl">
       <h1 className="text-center text-2xl font-medium p-2  text-white">
-        PrimeFlix
+        WatchTV
       </h1>
       <form onSubmit={handleSubmit}>
         <Input

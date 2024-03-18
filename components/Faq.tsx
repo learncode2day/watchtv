@@ -9,10 +9,10 @@ export default function FAQ() {
           <AccordionItem
             key="1"
             aria-label="Accordion 1"
-            title="What is PrimeFLix"
+            title="What is WatchTV"
             className="text-gray-600 text-sm"
           >
-            PrimeFlix is a website wher you can watch your favorite movies and
+            WatchTV is a website wher you can watch your favorite movies and
             tv shows for free. This service displays video files from
             nonaffiliated third party providers. The creator of the site is not
             making any profits from the service provided. All the advertising
@@ -21,14 +21,14 @@ export default function FAQ() {
           <AccordionItem
             key="2"
             aria-label="Accordion 2"
-            title="Is PrimeFlix Safe"
+            title="Is WatchTV Safe"
             className="text-gray-600 text-sm"
           >
-            PrimeFlix allows you to watch your favorite movies and TV episodes
+            WatchTV allows you to watch your favorite movies and TV episodes
             without worrying about identity theft, data loss. Your full name,
             emai address, or even the specifics of your payment card are not
             required. There won't be any information leaks if no information is
-            exchanged. In conclusion, PrimeFlix is one of the safest websites
+            exchanged. In conclusion, WatchTV is one of the safest websites
             for streaming free movies online.
           </AccordionItem>
           <AccordionItem
@@ -59,7 +59,7 @@ export default function FAQ() {
           <AccordionItem
             key="1"
             aria-label="Accordion 1"
-            title="Why There Are Ads"
+            title="Why are there ads?"
             className="text-gray-600 text-sm"
           >
             We are really sorry for the inconvenience. But we don't have any
@@ -70,7 +70,7 @@ export default function FAQ() {
           <AccordionItem
             key="2"
             aria-label="Accordion 2"
-            title="I can not access the server"
+            title="I can not access the server?"
             className="text-gray-600 text-sm"
           >
             <ul>
@@ -85,10 +85,10 @@ export default function FAQ() {
             title="Disclaimer"
             className="text-gray-600 text-sm"
           >
-            PrimeFlix does not host any files, it only links to 3rd party
+            WatchTV does not host any files, it only links to 3rd party
             services. Legal issues should be taken up with the file hosts and
-            providers. PrimeFlix is not responsible for any media files shown by
-            the video providers.
+            providers. WatchTV is not responsible for any media files shown by
+            the video providers. For DMCA, contact <b><u><a href="mailto:dmca@starnode.host">dmca@starnode.host</a></u></b>
           </AccordionItem>
           <AccordionItem
             key="4"
