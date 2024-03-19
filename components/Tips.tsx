@@ -15,7 +15,7 @@ export default function Tips() {
         <br className="block sm:hidden" /> For Best Experience
       </span>
       <span>
-        Change to a different Provier <br className="block sm:hidden" /> If
+        Change to a different Provider <br className="block sm:hidden" /> If
         Current doesn't work
       </span>
       
